@@ -138,12 +138,7 @@ a {
     bottom: 0;
 }
 
-.right {
-    float: right;
-    padding-left: 2rem;
-}
-
-.left {
+.me {
     float: left;
     padding-right: 2rem;
 }
