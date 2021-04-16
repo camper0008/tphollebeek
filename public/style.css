@@ -2,8 +2,8 @@
     --primary-100: #F0F3F9;
     --primary-200: #D3DBEE;
     --primary-300: #8BA0D0;
-    --primary-400: #647fbf; 
-    --primary-700: #32538e;
+    --primary-400: #647FBF; 
+    --primary-700: #32538E;
     --primary-900: #1E2B48;
 
     --accent-800: #1f1f1f;
@@ -64,11 +64,6 @@ body {
     padding: 2rem;
     background-color: var(--accent-900);
     overflow: auto;
-}
-
-.footer {
-    position: absolute;
-    bottom: 0;
 }
 
 h1 {
@@ -136,6 +131,11 @@ a {
     height: 3.25rem;
     float: right;
     padding: 0 0 0 0;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
 }
 
 .right {

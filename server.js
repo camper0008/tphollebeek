@@ -18,4 +18,6 @@ app.get('/contact', (req, res) => {
     res.sendFile(__dirname + '/public/pages/contact.html')
 })
 
-app.listen(80);
+app.listen(80, () => {
+    console.log("Server is now started.")
+});
