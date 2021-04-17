@@ -1,7 +1,7 @@
 let express = require('express');
 let app = express();
 
-app.use('/public', express.static('public'));
+app.use('/', express.static('public'));
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/pages/index.html')
 })

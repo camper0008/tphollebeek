@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/style.css">
+    <link rel="stylesheet" href="pages/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
     <title>Hjem</title>
@@ -36,7 +36,7 @@
         <h1>velkommen</h1>
         <p>Hej, jeg er Pieter, en <span id="age">17</span> år gammel student og programmør.</p>
         <p>Klik på de flotte knapper oppe øverst for at kunne se mere af mig.</p>
-        <img class="icon" src="public/images/icons/home-blue.svg">
+        <img class="icon" src="images/icons/home-blue.svg">
     </div>
     <script>
         let element = document.getElementById('age');
@@ -44,7 +44,7 @@
 
         setInterval(() => {
             ageInMilliseconds = Date.now() - 1084924800000;
-            element.textContent = (ageInMilliseconds/(1000*60*60*24*365) + '00000000').slice(0, 12);
+            element.textContent = (ageInMilliseconds/(1000*60*60*24*365.25) + '00000000').slice(0, 12);
         }, 1)
     </script>
 </body>
