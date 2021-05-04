@@ -23,7 +23,7 @@
 
 body {
     background-color: var(--accent-800);
-    background-image: url('../images/header-wide.png');
+    background-image: url('images/header-wide.png');
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -158,7 +158,7 @@ a {
 @media only screen and (max-width: 800px) {
     body {
         background-color: var(--accent-800);
-        background: url('../images/header-wide.png');
+        background: url('images/header-square.png');
         background-size: cover;
         background-repeat: no-repeat;    
     }
