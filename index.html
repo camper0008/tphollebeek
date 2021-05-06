@@ -40,10 +40,11 @@
     </div>
     <script>
         let element = document.getElementById('age');
-        let ageInMilliseconds = Date.now() - 1084924800000; //time difference from 1/1-1970 -> 18/5-2004
+        let birthday = Date.UTC(2004, 4, 18);
+        let ageInMilliseconds = Date.now() - birthday;
 
         setInterval(() => {
-            ageInMilliseconds = Date.now() - 1084924800000;
+            ageInMilliseconds = Date.now() - birthday;
             element.textContent = (ageInMilliseconds/(1000*60*60*24*365.25) + '00000000').slice(0, 12);
         }, 1)
     </script>
