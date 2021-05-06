@@ -24,7 +24,7 @@
 body {
     background-color: var(--accent-800);
     background-image: url('images/header-wide.jpg');
-    background-size: cover;
+    background-size: 100vw 100vh;
     background-repeat: no-repeat;
 
     font-size: 1.3125rem;
