@@ -55,13 +55,15 @@ body {
 .toolbar-button > a:hover {
     color: var(--primary-200);
     text-shadow: 0.35em 0.35em 1px var(--primary-900);
+    cursor: pointer;
 
     transition: color, text-shadow 0.2s linear;
 }
 
 .section {
-    width: calc(100% - 4rem);
-    padding: 2rem;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2rem 16rem;
     background-color: var(--accent-900);
     overflow: auto;
 }
@@ -126,6 +128,9 @@ img::selection {
 a {
     color: var(--primary-400);
 }
+a::hover {
+    cursor: pointer;
+}
 
 .icon {
     height: 3.25rem;
@@ -153,6 +158,9 @@ a {
         width: 90%;
         transform: translate(5%, 0);    
     }
+    .section {
+        padding: 2rem 4rem;
+    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -161,11 +169,12 @@ a {
         background: url('images/header-square.jpg');
         background-size: cover;
         background-repeat: no-repeat;    
+        height: 100vh;
     }
     .section {
-        box-sizing: border-box;
         width: 75%;
         margin: 0 0 0 25%;
+        padding: 2rem;
     }
     .toolbar-menu {
         box-sizing: border-box;
