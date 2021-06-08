@@ -10,8 +10,15 @@
     --accent-900: #0f0f0f;
 }
 
-* {
+*,
+*::before,
+*::after {
     margin: 0px;
+}
+
+*:focus {
+    background: var(--primary-900);
+    color: var(--primary-200);
 }
 
 ::selection {
@@ -50,14 +57,17 @@ body {
     text-decoration: none;
     letter-spacing: 0.1em;
 
-    transition: color, text-shadow 0.1s linear;
+    transition: color, text-shadow 0.1s ease;
 }
 .toolbar-button > a:hover {
     color: var(--primary-200);
     text-shadow: 0.35em 0.35em 1px var(--primary-900);
     cursor: pointer;
 
-    transition: color, text-shadow 0.2s linear;
+    transition: color, text-shadow 0.2s ease    ;
+}
+.toolbar-button > a:focus {
+    text-shadow: none;
 }
 
 .section {
