@@ -10,14 +10,19 @@ import Experience from './pages/Experience';
 function getPage(page) {
     switch (page) {
         case '/home':
+            document.title = 'Hjem';
             return <Home />;
-        case '/about':
-            return <About />;    
-        case '/portfolio':
-            return <Portfolio />;
         case '/experience':
+            document.title = 'Erfaring';
             return <Experience />;
+        case '/portfolio':
+            document.title = 'Projekter';
+            return <Portfolio />;    
+        case '/about':
+            document.title = 'Om mig';
+            return <About />;    
         case '/contact':
+            document.title = 'Kontakt';
             return <Contact />;
         default:
             return (
