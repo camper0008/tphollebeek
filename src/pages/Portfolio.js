@@ -4,6 +4,7 @@ import footerIcon from '../assets/images/icons/portfolio-blue.svg';
 import splashImage from '../assets/images/firmacorp_splash.png';
 import productPageImage from '../assets/images/firmacorp_productpage.png';
 import productListImage from '../assets/images/firmacorp_productlist.png';
+import ticTacToeGameFile from '../assets/0s_1s/template/index.html';
 
 function Portfolio() {
     return (
@@ -28,7 +29,7 @@ function Portfolio() {
               PLAYER 0 WON!<br/>
               - GAME OVER -
             </pre>
-            <p>Du kan også spille (mod digselv) <a href="/assets/0s_1s/template/index.html">her</a>.</p>
+            <p>Du kan også spille (mod digselv) <a href={ticTacToeGameFile}>her</a>.</p>
 
           <h2>MessAnger</h2>
             <p>Som et skoleprojekt lavede jeg sammen med min klassekammerat <a href="https://simonfj20.site" target="_blank" rel="noreferrer">Simon From Jakobsen</a> en webapp hvor man kunne skabe diskussionsrumme og sende beskeder til hinanden, samt med et registerings- og loginssystem.</p>
