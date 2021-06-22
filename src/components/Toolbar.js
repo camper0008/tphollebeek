@@ -13,7 +13,8 @@ function ToolbarButton(props) {
                 if (event.key === 'Enter') {
                     event.target.click();
                 }
-            }}>
+            }}
+            tabIndex="0">
                 {props.name}
             </a>
         </div>
