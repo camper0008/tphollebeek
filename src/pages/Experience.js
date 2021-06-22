@@ -1,4 +1,4 @@
-import footerIcon from '../images/icons/medal-blue.svg'
+import footerIcon from '../assets/images/icons/medal-blue.svg'
 import Rating from '../components/Rating'
 
 function Experience() {

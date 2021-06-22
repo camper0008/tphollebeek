@@ -1,5 +1,5 @@
-import skillFilled from '../images/icons/skill-fill-white.svg'
-import skillEmpty from '../images/icons/skill-none-white.svg'
+import skillFilled from '../assets/images/icons/skill-fill-white.svg'
+import skillEmpty from '../assets/images/icons/skill-none-white.svg'
 
 function Rating(props) {
   return (

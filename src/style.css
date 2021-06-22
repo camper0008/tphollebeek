@@ -30,9 +30,10 @@
 
 body {
     background-color: var(--accent-800);
-    background-image: url('images/header-wide.jpg');
-    background-size: 100vw 100vh;
-    background-repeat: no-repeat;
+    background: url('assets/images/header-square.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;    
+    height: 100vh;
 
     font-size: 1.3125rem;
     font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -175,11 +176,7 @@ a::hover {
 
 @media only screen and (max-width: 800px) {
     body {
-        background-color: var(--accent-800);
-        background: url('images/header-square.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;    
-        height: 100vh;
+        background: url('assets/images/header-square.jpg');
     }
     .section {
         width: 75%;

@@ -1,4 +1,4 @@
-import footerIcon from '../images/icons/work-blue.svg'
+import footerIcon from '../assets/images/icons/work-blue.svg'
 
 function Contact() {
     return (

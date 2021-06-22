@@ -1,5 +1,5 @@
-import headshotImage from './../images/me.jpg'
-import footerIcon from '../images/icons/person-blue.svg'
+import headshotImage from './../assets/images/me.jpg'
+import footerIcon from '../assets/images/icons/person-blue.svg'
 
 function About() {
     return (
