@@ -1,4 +1,3 @@
-import '../style.css';
 import skillFilled from '../images/icons/skill-fill-white.svg'
 import skillEmpty from '../images/icons/skill-none-white.svg'
 

@@ -1,4 +1,3 @@
-import '../style.css'
 import footerIcon from '../images/icons/work-blue.svg'
 
 function Contact() {

@@ -1,4 +1,3 @@
-import './style.css';
 import { useState } from 'react';
 import Toolbar from './components/Toolbar';
 import Home from './pages/Home';

@@ -1,5 +1,3 @@
-import '../style.css';
-
 function ToolbarButton(props) {
     return (
         <div class="toolbar-button">

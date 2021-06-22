@@ -1,4 +1,3 @@
-import '../style.css'
 import footerIcon from '../images/icons/home-blue.svg'
 
 function Home() {

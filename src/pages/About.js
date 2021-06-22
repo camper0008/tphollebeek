@@ -1,4 +1,3 @@
-import '../style.css'
 import headshotImage from './../images/me.jpg'
 import footerIcon from '../images/icons/person-blue.svg'
 

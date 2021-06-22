@@ -1,4 +1,3 @@
-import '../style.css'
 import footerIcon from '../images/icons/medal-blue.svg'
 import Rating from '../components/Rating'
 

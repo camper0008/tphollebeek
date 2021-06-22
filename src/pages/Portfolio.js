@@ -1,4 +1,4 @@
-import '../style.css';
+
 import messangerImage from '../images/messanger.jpg';
 import footerIcon from '../images/icons/portfolio-blue.svg';
 
