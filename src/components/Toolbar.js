@@ -5,6 +5,7 @@ function ToolbarButton(props) {
         <div class="toolbar-button">
             <a href={props.link}
             onClick={() => {
+                document.title = props.name;
                 props.setPage(props.page);
                 window.history.pushState({}, props.name, props.page);
             }}
