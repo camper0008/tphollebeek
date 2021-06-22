@@ -45,11 +45,11 @@ function Portfolio() {
             <p>Ligesom med MessAnger lavede jeg frontend mens <a href="https://simonfj20.site" target="_blank" rel="noreferrer">Simon</a> lavede backend, og hjalp hinanden hvor muligt.</p>
             <p>Det endte med at se ret godt ud, dog meget grundlæggende i design pga. tidsmæssige begrænsninger.</p>
             <p>Startside</p>
-            <img src={splashImage}></img>
+            <img src={splashImage} alt="Side med en karrusel af forskellige produkter."></img>
             <p>Produktliste</p>
-            <img src={productListImage}></img>
+            <img src={productListImage} alt="Side med en liste af forskellige produkter."></img>
             <p>Produktside</p>
-            <img src={productPageImage}></img>
+            <img src={productPageImage} alt="Side med produktinformation, derunder en karrusel for produktbilleder, produkttitel og produktbeskrivelse."></img>
 
           <img class="icon" src={footerIcon} alt="Et blåt ikon der forestiller en portfolio."></img>
         </div>
