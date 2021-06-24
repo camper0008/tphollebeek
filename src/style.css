@@ -48,7 +48,7 @@ body {
     padding: 2rem 0;
 }
 
-.toolbar-button > a {
+.toolbar-link {
     color: var(--primary-100);
 
     font-family: 'Roboto Condensed', 'Arial Black', Arial, Helvetica, sans-serif;
@@ -60,14 +60,14 @@ body {
 
     transition: color, text-shadow 0.1s ease;
 }
-.toolbar-button > a:hover {
+.toolbar-link a:hover {
     color: var(--primary-200);
     text-shadow: 0.15em 0.15em 0 var(--primary-900);
     cursor: pointer;
 
     transition: color, text-shadow 0.2s ease    ;
 }
-.toolbar-button > a:focus-visible {
+.toolbar-link a:focus-visible {
     text-shadow: none;
 }
 
@@ -199,7 +199,7 @@ a::hover {
         flex-direction: column; 
         background-color: var(--accent-800);
     }
-    .toolbar-button > a {
+    .toolbar-link a {
         font-size: 1rem;
         hyphens: auto;
         -webkit-hyphens: auto;

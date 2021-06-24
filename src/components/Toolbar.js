@@ -1,22 +1,22 @@
 function ToolbarButton(props) {
     return (
-        <div class="toolbar-button">
-            <a href={props.link}
-            onClick={() => {
-                document.title = props.name;
-                props.setPage(props.page);
-                window.history.pushState({}, props.name, props.page);
-            }}
-            onKeyUp={(event) => {
-                if (event.key === 'Enter') {
-                    event.target.click();
-                }
-            }}
-            tabIndex="0">
-                {props.name}
-            </a>
-        </div>
-    )
+        <a 
+        className="toolbar-link"
+        href={props.link}
+        onClick={() => {
+            document.title = props.name;
+            props.setPage(props.page);
+            window.history.pushState({}, props.name, props.page);
+        }}
+        onKeyUp={(event) => {
+            if (event.key === 'Enter') {
+                event.target.click();
+            }
+        }}
+        tabIndex="0">
+            {props.name}
+        </a>
+)
 }
 
 function Toolbar(props) {
