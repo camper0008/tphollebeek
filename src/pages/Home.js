@@ -1,4 +1,4 @@
-import footerIcon from '../assets/images/icons/home-blue.svg'
+import footerIcon from '../assets/images/icons/home-blue.svg';
 
 function Home() {
     return (
