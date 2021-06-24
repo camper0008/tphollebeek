@@ -30,7 +30,7 @@
 
 body {
     background-color: var(--accent-800);
-    background: url('assets/images/header-square.jpg');
+    background: url('assets/images/header-wide.jpg');
     background-size: cover;
     background-repeat: no-repeat;    
     height: 100vh;
