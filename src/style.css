@@ -62,7 +62,7 @@ body {
 }
 .toolbar-button > a:hover {
     color: var(--primary-200);
-    text-shadow: 0.1em 0.1em 0 var(--primary-900);
+    text-shadow: 0.15em 0.15em 0 var(--primary-900);
     cursor: pointer;
 
     transition: color, text-shadow 0.2s ease    ;
