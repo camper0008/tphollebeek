@@ -22,15 +22,15 @@ function ToolbarButton(props) {
 
 function Toolbar(props) {
   return (
-    <div class="toolbar-menu">
+    <div className="toolbar-menu">
         <ToolbarButton name="Hjem" page="/" setPage={props.setPage} />
-        <span class="toolbar-divider">|</span>
+        <span className="toolbar-divider">|</span>
         <ToolbarButton name="Erfaring" page="/experience" setPage={props.setPage} />
-        <span class="toolbar-divider">|</span>
+        <span className="toolbar-divider">|</span>
         <ToolbarButton name="Projekter" page="/portfolio" setPage={props.setPage} />
-        <span class="toolbar-divider">|</span>
+        <span className="toolbar-divider">|</span>
         <ToolbarButton name="Om mig" page="/about" setPage={props.setPage} />
-        <span class="toolbar-divider">|</span>
+        <span className="toolbar-divider">|</span>
         <ToolbarButton name="Kontakt" page="/contact" setPage={props.setPage} />
     </div>
   );

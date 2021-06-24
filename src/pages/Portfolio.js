@@ -5,7 +5,7 @@ import firmacorpImage from '../assets/images/firmacorp_animated.png';
 
 function Portfolio() {
     return (
-        <div class="section">
+        <div className="section">
           <h1>Projekter</h1>
 
           <h2>Min hjemmeside</h2>
@@ -32,7 +32,7 @@ function Portfolio() {
             <p>Alt frontend er skabt af mig inkl. programmering i HTML, CSS og TypeScript, og alt backendarbejdet er lavet af <a href="https://simonfromjakobsen.netlify.app" target="_blank" rel="noreferrer">Simon From Jakobsen</a>.</p>
             <p>Du kan finde github siden for det projekt <a href="https://github.com/SimonFJ20/MessAnger/tree/frontend-v2" target="_blank" rel="noreferrer">her</a>.</p>
             <p>Ligesom denne side, er webappen også bygget til mobiler, dog skal man gå ind på /mobile for at få adgang til den, hvilket man ikke behøver for denne side.</p>
-            <img class="project" src={messangerImage} alt="Et webapp der forestiller en chatting app. Den er sort og grøn i tema."></img>
+            <img className="project" src={messangerImage} alt="Et webapp der forestiller en chatting app. Den er sort og grøn i tema."></img>
             <p><i>demobillede af vores webapp.</i></p>
             <p>Jeg har desuden også lavet mange projekter i Lua, som et dialogsystem, samt mange UI projekter.</p>
 
@@ -41,10 +41,10 @@ function Portfolio() {
             <p>For det lavede jeg sammen med min klassekammerat <a href="https://simonfromjakobsen.netlify.app" target="_blank" rel="noreferrer">Simon From Jakobsen</a> en hjemmeside med en startside med karrusel af forskellige produkter, produktliste og produktside, samt et Intra for at skabe og slette nye produkter og opdatere karrusellen.</p>
             <p>Ligesom med MessAnger lavede jeg frontend mens Simon lavede backend, og hjalp hinanden hvor muligt.</p>
             <p>Det endte med at se ret godt ud, dog meget grundlæggende i design pga. tidsmæssige begrænsninger.</p>
-            <img class="project" src={firmacorpImage} alt="Side med en karrusel af forskellige produkter."></img>
+            <img className="project" src={firmacorpImage} alt="Side med en karrusel af forskellige produkter."></img>
             <p>Du kan se github siden for projektet <a href="https://github.com/SimonFJ20/firmacorp-site">her</a>.</p>
 
-          <img class="icon" src={footerIcon} alt="Et blåt ikon der forestiller en portfolio."></img>
+          <img className="icon" src={footerIcon} alt="Et blåt ikon der forestiller en portfolio."></img>
         </div>
     );
 }

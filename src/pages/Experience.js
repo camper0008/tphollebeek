@@ -3,7 +3,7 @@ import Rating from '../components/Rating'
 
 function Experience() {
     return (
-        <div class="section">
+        <div className="section">
             <h1>Kompetencer</h1>
           
             <h2>Sproglige</h2>
@@ -26,7 +26,7 @@ function Experience() {
             <h2>Personlige</h2>
             <p>Når jeg arbejder på et projekt, især hvis det er noget der interesserer mig som f.eks. matematik el. programmering, kan jeg let "zone ind" og arbejde meget fokuseret.</p>
             
-            <img class="icon" src={footerIcon} alt="Et blåt ikon af en medalje."></img>
+            <img className="icon" src={footerIcon} alt="Et blåt ikon af en medalje."></img>
         </div>
     );
   }
