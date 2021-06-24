@@ -2,8 +2,9 @@ function ToolbarButton(props) {
     return (
         <a 
         className="toolbar-link"
-        href="javascript:;"
-        onClick={() => {
+        href={props.page}
+        onClick={(event) => {
+            event.preventDefault();
             document.title = props.name;
             props.setPage(props.page);
             window.history.pushState({}, props.name, props.page);
