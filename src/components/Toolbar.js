@@ -2,7 +2,7 @@ function ToolbarButton(props) {
     return (
         <a 
         className="toolbar-link"
-        href={props.link}
+        href="javascript:;"
         onClick={() => {
             document.title = props.name;
             props.setPage(props.page);
