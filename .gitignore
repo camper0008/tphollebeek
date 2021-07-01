@@ -1,0 +1,2 @@
+# prevent node modules being dragged over from react branch
+/node_modules
