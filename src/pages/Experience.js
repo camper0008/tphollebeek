@@ -24,7 +24,7 @@ function Experience() {
             <p>Diverse sprog- bl.a. Python - 3/5</p>
             <Rating length="3" />
             <h2>Personlige</h2>
-            <p>Når jeg arbejder på et projekt, især hvis det er noget der interesserer mig som f.eks. matematik el. programmering, kan jeg let "zone ind" og arbejde meget fokuseret.</p>
+            <p>Når jeg arbejder på et projekt, især hvis det er noget der interesserer mig som f.eks. matematik el. programmering, kan jeg let blive grebet af det og arbejde meget fokuseret.</p>
             
             <img className="icon" src={footerIcon} alt="Et blåt ikon af en medalje."></img>
         </div>
