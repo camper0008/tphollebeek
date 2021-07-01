@@ -30,7 +30,7 @@
 
 body {
     background-color: var(--accent-800);
-    background: url('images/header-square.jpg');
+    background: url('assets/images/header-wide.jpg');
     background-size: cover;
     background-repeat: no-repeat;    
     height: 100vh;
@@ -176,7 +176,7 @@ a::hover {
 
 @media only screen and (max-width: 800px) {
     body {
-        background: url('images/header-square.jpg');
+        background: url('assets/images/header-low-res.jpg');
     }
     .section {
         width: 75%;
