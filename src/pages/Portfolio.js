@@ -34,7 +34,6 @@ function Portfolio() {
             <p>Ligesom denne side, er webappen også bygget til mobiler, dog skal man gå ind på /mobile for at få adgang til den, hvilket man ikke behøver på denne side.</p>
             <img className="project" src={messangerImage} alt="Et webapp der forestiller en chatting app. Den er sort og grøn i tema."></img>
             <p><i>demobillede af vores webapp.</i></p>
-            <p>Jeg har også lavet mange projekter i Lua, som et dialogsystem, samt mange UI projekter.</p> TODO CHANGE LINE
 
           <h2>FirmaCorp Site</h2>
             <p>Til vores GF2 afsluttende eud-eksamen blev vi bedt om (blandt andet) at lave en hjemmeside til et fiktivt firma.</p>
@@ -43,6 +42,8 @@ function Portfolio() {
             <p>Det endte med at se ret godt ud, dog meget grundlæggende i design pga. tidsmæssige begrænsninger.</p>
             <img className="project" src={firmacorpImage} alt="Side med en karrusel af forskellige produkter."></img>
             <p>Du kan se github siden for projektet <a href="https://github.com/SimonFJ20/firmacorp-site">her</a>.</p>
+
+            <p>Jeg har også lavet mange projekter i Lua, som et dialogsystem, samt mange UI projekter.</p>
 
           <img className="icon" src={footerIcon} alt="Et blåt ikon der forestiller en portfolio."></img>
         </div>
