@@ -123,17 +123,9 @@ h2::after {
     margin: 0.5625em 0.5em 0.3625em;
 }
 
-p, img {
+p {
     padding: 0 0 0.5em;
     line-height: 1.5;
-}
-
-img {
-    pointer-events: none;
-}
-img::selection {
-    color: transparent;
-    background-color: transparent;
 }
 
 a {
@@ -147,6 +139,7 @@ a::hover {
     height: 3.25rem;
     float: right;
     padding: 0 0 0 0;
+    pointer-events: none;
 }
 
 .footer {
@@ -156,12 +149,22 @@ a::hover {
 
 .me {
     float: left;
-    padding-right: 2rem;
+    margin: 0 1.5em 0.5em 0;
 }
 
 .project {
     border: 1px solid var(--primary-100);
     width: 50%;
+    cursor: zoom-in;
+}
+.project:active {
+    position: fixed;
+    width: auto;
+    height: 95vh;
+    max-width: 95vw;
+    inset: 0;
+    margin: auto;
+    object-fit: contain;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -209,9 +212,17 @@ a::hover {
     }
     .me {
         float: none;
+        margin: initial;
     }
     .project {
         width: 100%;
         height: 100%;
+        cursor: auto;
+    }
+    .project:active {
+        position: static;
+        width: 100%;
+        height: 100%;
+        max-width: none;
     }
 }
