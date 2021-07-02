@@ -209,6 +209,8 @@ a::hover {
         font-size: 1rem;
         hyphens: auto;
         -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
     }
     .toolbar-divider {
         display: none;
