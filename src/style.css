@@ -40,6 +40,10 @@ body {
     color: var(--primary-200);
 }
 
+noscript {
+    background: var(--accent-900);
+}
+
 .toolbar-menu {
     width: 50%;
     transform: translate(50%, 0);
