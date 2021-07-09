@@ -187,6 +187,7 @@ a::hover {
 @media only screen and (max-width: 800px) {
     body {
         background: url('assets/images/header-low-res.jpg');
+        background-size: contain;
     }
     .section {
         width: 75%;
