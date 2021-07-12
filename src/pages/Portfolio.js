@@ -1,7 +1,8 @@
 
 import messangerImage from '../assets/images/messanger.jpg';
 import footerIcon from '../assets/images/icons/portfolio-blue.svg';
-import firmacorpImage from '../assets/images/firmacorp_animated.png';
+import firmacorpImage from '../assets/images/firmacorp.apng';
+import dtImage from '../assets/images/dt.apng';
 
 function Portfolio() {
     return (
@@ -40,11 +41,11 @@ function Portfolio() {
             <p>Sammen med min klassekammerat <a href="https://simonfromjakobsen.netlify.app" target="_blank" rel="noreferrer">Simon From Jakobsen</a> lavede vi en hjemmeside med en startside med karrusel af forskellige produkter, produktliste og produktside, samt et Intra for at skabe og slette nye produkter og opdatere karrusellen.</p>
             <p>Ligesom ved MessAnger lavede jeg frontend, mens Simon lavede backend, og vi hjalp hinanden, hvor det var muligt.</p>
             <p>Det endte med at se ret godt ud, dog meget grundlæggende i design pga. tidsmæssige begrænsninger.</p>
-            <img className="project" src={firmacorpImage} alt="Side med en karrusel af forskellige produkter."></img>
+            <img className="project" src={firmacorpImage} alt="slideshow af 3 billeder; en startside, liste af produkter og produktside."></img>
             <p>Du kan se github siden for projektet <a href="https://github.com/SimonFJ20/firmacorp-site">her</a>.</p>
-
-            <p>Jeg har også lavet mange projekter i Lua, som et dialogsystem, samt mange UI projekter.</p>
-
+            <p>Jeg har også lavet mange projekter i Lua, som et dialogsystem, samt mange UI projekter, og andre ting der ikke er færdig endnu.</p>
+            <img class="project" src={dtImage} alt="et slideshow af et login system og et blog system"></img>
+            <p><i>(projekt under arbejde)</i></p>
           <img className="icon" src={footerIcon} alt="Et blåt ikon der forestiller en portfolio."></img>
         </div>
     );
