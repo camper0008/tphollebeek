@@ -36,10 +36,10 @@ function App() {
     const [page, setPage] = useState(window.location.pathname);
     if(page === '/') setPage('/home');
 
-    return (<div>
+    return (<>
         <Toolbar setPage={setPage}/>
         {getPage(page.replace(/\/$/, ''))}
-    </div>);
+    </>);
 }
 
 export default App;
