@@ -194,8 +194,8 @@ a::hover {
         background-size: cover;
     }
     .section {
-        width: 90%;
-        margin: 0 0 0 10%;
+        width: 85%;
+        margin: 0 0 0 15%;
         padding: 2rem;
     }
     .toolbar-menu {
@@ -221,9 +221,8 @@ a::hover {
         display: block;
         z-index: 500;
         
-        width: 10%;
+        width: 15%;
         height: 100%;
-        padding: 1em;
         border: none;
         overflow-x: hidden;
         
