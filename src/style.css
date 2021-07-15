@@ -14,6 +14,7 @@
 *::before,
 *::after {
     margin: 0px;
+    box-sizing: border-box;
 }
 
 *:focus-visible {
@@ -52,6 +53,10 @@ noscript {
     padding: 2rem 0;
 }
 
+.toolbar-menu-toggle {
+    display: none;
+}
+
 .toolbar-link {
     color: var(--primary-100);
 
@@ -76,7 +81,6 @@ noscript {
 }
 
 .section {
-    box-sizing: border-box;
     width: 100%;
     padding: 2rem 16rem;
     background-color: var(--accent-900);
@@ -187,29 +191,69 @@ a::hover {
 @media only screen and (max-width: 800px) {
     body {
         background: url('assets/images/header-low-res.jpg');
-        background-size: contain;
+        background-size: cover;
     }
     .section {
-        width: 75%;
-        margin: 0 0 0 25%;
+        width: 90%;
+        margin: 0 0 0 10%;
         padding: 2rem;
     }
     .toolbar-menu {
-        box-sizing: border-box;
         z-index: 500;
 
         padding: 2%;
 
         position: fixed;
-        width: 25%;
+        width: 40%;
         height: 100%;
         left: 0;
         top: 0;
         transform: none;
 
+        overflow-x: hidden;
+
         flex-direction: column; 
         background-color: var(--accent-800);
+
+        transition: width 0.2s, padding 0.2s;
     }
+    .toolbar-menu-toggle {
+        display: block;
+        z-index: 500;
+        
+        width: 10%;
+        height: 100%;
+        padding: 1em;
+        border: none;
+        overflow-x: hidden;
+        
+        position: fixed;
+        left: 40%;
+        top: 0;
+        transform: none;
+        
+        background-color: var(--accent-800);
+        color: var(--primary-200);
+        font-family: Roboto, Arial, Helvetica, sans-serif;
+        font-size: 1.3125rem;
+
+        cursor: pointer;
+
+        transition: left 0.2s;
+    }
+    .toolbar-menu-toggle:focus-visible {
+        outline: 2px solid var(--primary-400);
+    }
+
+    .toolbar-menu.collapsed {
+        width: 0%;
+        padding: 0;
+    }
+    .toolbar-menu-toggle.collapsed {
+        left: 0;
+    }
+
+
     .toolbar-link {
         font-size: 1rem;
         hyphens: auto;

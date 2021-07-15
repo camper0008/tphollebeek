@@ -21,8 +21,8 @@ function ToolbarButton(props) {
 }
 
 function Toolbar(props) {
-  return (
-    <div className="toolbar-menu">
+  return (<>
+    <div className="toolbar-menu" id="toolbar-menu">
         <ToolbarButton name="Hjem" page="/" setPage={props.setPage} />
         <span className="toolbar-divider">|</span>
         <ToolbarButton name="Erfaring" page="/experience" setPage={props.setPage} />
@@ -33,7 +33,26 @@ function Toolbar(props) {
         <span className="toolbar-divider">|</span>
         <ToolbarButton name="Kontakt" page="/contact" setPage={props.setPage} />
     </div>
-  );
+    <button 
+        className="toolbar-menu-toggle" 
+        id="toolbar-menu-toggle"
+        onClick={() => {
+            const [toolbarMenu, toolbarToggle] = [document.querySelector('#toolbar-menu'), document.querySelector('#toolbar-menu-toggle')]
+            if (toolbarMenu.classList.contains('collapsed')) {
+                toolbarMenu.classList.remove('collapsed');
+                toolbarToggle.classList.remove('collapsed');
+
+                toolbarToggle.textContent = '×'
+            } else {
+                toolbarMenu.classList.add('collapsed');
+                toolbarToggle.classList.add('collapsed');
+
+                toolbarToggle.textContent = '+'
+            }
+        }}>
+            ×
+        </button>
+  </>);
 }
 
 export default Toolbar;
