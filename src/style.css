@@ -14,20 +14,12 @@
 *::before,
 *::after {
     margin: 0px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 *:focus-visible {
     background: var(--primary-900);
     color: var(--primary-200);
-}
-
-::-moz-selection {
-    background-color: var(--primary-900);
-    color: var(--primary-100);
-    fill-opacity: 0.5;
-    text-shadow: none;
 }
 
 ::selection {
@@ -55,15 +47,9 @@ noscript {
 
 .toolbar-menu {
     width: 50%;
-    -webkit-transform: translate(50%, 0);
-        -ms-transform: translate(50%, 0);
-            transform: translate(50%, 0);
-    display: -webkit-box;
-    display: -ms-flexbox;
+    transform: translate(50%, 0);
     display: flex;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    justify-content: space-evenly;
     padding: 2rem 0;
 }
 
@@ -81,20 +67,12 @@ noscript {
     text-decoration: none;
     letter-spacing: 0.1em;
 
-    -webkit-transition: color, text-shadow 0.1s ease;
-
-    -o-transition: color, text-shadow 0.1s ease;
-
     transition: color, text-shadow 0.1s ease;
 }
 .toolbar-link:hover {
     color: var(--primary-200);
     text-shadow: 0.15em 0.15em 0 var(--primary-900);
     cursor: pointer;
-
-    -webkit-transition: color, text-shadow 0.2s ease    ;
-
-    -o-transition: color, text-shadow 0.2s ease    ;
 
     transition: color, text-shadow 0.2s ease    ;
 }
@@ -185,7 +163,6 @@ a::hover {
 .project {
     border: 1px solid var(--primary-100);
     width: 50%;
-    cursor: -webkit-zoom-in;
     cursor: zoom-in;
 }
 .project:active {
@@ -204,9 +181,7 @@ a::hover {
 @media only screen and (max-width: 1200px) {
     .toolbar-menu {
         width: 90%;
-        -webkit-transform: translate(5%, 0);
-            -ms-transform: translate(5%, 0);
-                transform: translate(5%, 0);    
+        transform: translate(5%, 0);    
     }
     .section {
         padding: 2rem 4rem;
@@ -233,24 +208,12 @@ a::hover {
         height: 100%;
         left: 0;
         top: 0;
-        -webkit-transform: none;
-            -ms-transform: none;
-                transform: none;
+        transform: none;
 
         overflow-x: hidden;
 
-        -webkit-box-orient: vertical;
-
-        -webkit-box-direction: normal;
-
-            -ms-flex-direction: column;
-
-                flex-direction: column; 
+        flex-direction: column; 
         background-color: var(--accent-800);
-
-        -webkit-transition: width 0.2s, padding 0.2s;
-
-        -o-transition: width 0.2s, padding 0.2s;
 
         transition: width 0.2s, padding 0.2s;
     }
@@ -266,9 +229,7 @@ a::hover {
         position: fixed;
         left: 40%;
         top: 0;
-        -webkit-transform: none;
-            -ms-transform: none;
-                transform: none;
+        transform: none;
         
         background-color: var(--accent-800);
         color: var(--primary-200);
@@ -276,10 +237,6 @@ a::hover {
         font-size: 1.3125rem;
 
         cursor: pointer;
-
-        -webkit-transition: left 0.2s;
-
-        -o-transition: left 0.2s;
 
         transition: left 0.2s;
     }
