@@ -1,2 +1,3 @@
-# prevent node modules being dragged over from react branch
+# prevent things being dragged over from react branch
 /node_modules
+/build
