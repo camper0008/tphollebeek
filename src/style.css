@@ -190,7 +190,7 @@ a::hover {
 
 @media only screen and (max-width: 600px) {
     body {
-        background: url('assets/images/header-low-res.jpg');
+        background: url('assets/images/header-low-res.webp');
         background-size: cover;
     }
     .section {
