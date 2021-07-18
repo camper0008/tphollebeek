@@ -15,22 +15,22 @@
 </head>
 <body>
     <!-- wow, inspect element alligevel. -->
-    <!-- mobile toolbar toggle -->
-    <input type="checkbox" id="sidebar-toggle">
-    <label for="sidebar-toggle" class="toolbar-menu-toggle"></label>
+    <!-- mobile navbar toggle -->
+    <input type="checkbox" id="navbar-mobile-toggle">
+    <label for="navbar-mobile-toggle" class="navbar-menu-toggle"></label>
     
-    <div class="toolbar-menu">
-        <a class="toolbar-link" href="/">hjem</a>
-        <span class="toolbar-divider">|</span>
-        <a class="toolbar-link" href="/experience">erfaring</a>
-        <span class="toolbar-divider">|</span>
-        <a class="toolbar-link" href="/portfolio">projekter</a>
-        <span class="toolbar-divider">|</span>
-        <a class="toolbar-link" href="/about">om mig</a>
-        <span class="toolbar-divider">|</span>
-        <a class="toolbar-link" href="/contact">kontakt</a>
-    </div>
-    <div class="section">
+    <nav class="navbar-menu">
+        <a class="navbar-link" href="/">hjem</a>
+        <span class="navbar-divider">|</span>
+        <a class="navbar-link" href="/experience">erfaring</a>
+        <span class="navbar-divider">|</span>
+        <a class="navbar-link" href="/portfolio">projekter</a>
+        <span class="navbar-divider">|</span>
+        <a class="navbar-link" href="/about">om mig</a>
+        <span class="navbar-divider">|</span>
+        <a class="navbar-link" href="/contact">kontakt</a>
+    </nav>
+    <section class="section">
         <h1>Projekter</h1>
 
         <h2>Min hjemmeside</h2>
@@ -57,6 +57,7 @@ PLAYER 0 WON!
         <p>Ligesom denne side, er webappen også bygget til mobiler, dog skal man gå ind på /mobile for at få adgang til den, hvilket man ikke behøver på denne side.</p>
         <img class="project" src="assets/images/messanger.jpg" alt="Et webapp der forestiller en chatting app. Den er sort og grøn i tema." >
         <p><i>demobillede af vores webapp.</i></p>
+
         <h2>FirmaCorp Site</h2>
         <p>Til vores GF2 afsluttende eud-eksamen blev vi bedt om (blandt andet) at lave en hjemmeside til et fiktivt firma.</p>
         <p>Sammen med min klassekammerat <a href="https://simonfromjakobsen.netlify.app" target="_blank" rel="noreferrer">Simon From Jakobsen</a> lavede vi en hjemmeside med en startside med karrusel af forskellige produkter, produktliste og produktside, samt et Intra for at skabe og slette nye produkter og opdatere karrusellen.</p>
@@ -64,10 +65,11 @@ PLAYER 0 WON!
         <p>Det endte med at se ret godt ud, dog meget grundlæggende i design pga. tidsmæssige begrænsninger.</p>
         <img class="project" src="assets/images/firmacorp.apng" alt="Slideshow af 3 billeder; en startside, liste af produkter og produktside."></img>
         <p>Du kan se github siden for projektet <a href="https://github.com/SimonFJ20/firmacorp-site">her</a>.</p>
+        
         <p>Jeg har også lavet mange projekter i Lua, som et dialogsystem, samt mange UI projekter, og andre ting der ikke er færdig endnu.</p>
         <img class="project" src="assets/images/dt.apng" alt="Et slideshow af 2 billeder; et login system og et blog system">
         <p><i>(projekt under arbejde)</i></p>
         <img class="icon" src="assets/images/icons/portfolio-blue.svg" alt="Et blåt ikon der forestiller en portfolio."">
-    </div>
+    </section>
 </body>
 </html>
