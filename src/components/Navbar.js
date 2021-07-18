@@ -34,10 +34,10 @@ function Navbar(props) {
         <NavbarLink name="Kontakt" page="/contact" setPage={props.setPage} />
     </nav>
     <button 
-        className="navbar-menu-toggle" 
-        id="navbar-menu-toggle"
+        className="navbar-mobile-toggle" 
+        id="navbar-mobile-toggle"
         onClick={() => {
-            const [navbarMenu, navbarToggle] = [document.querySelector('#navbar-menu'), document.querySelector('#navbar-menu-toggle')]
+            const [navbarMenu, navbarToggle] = [document.querySelector('#navbar-menu'), document.querySelector('#navbar-mobile-toggle')]
             if (navbarMenu.classList.contains('collapsed')) {
                 navbarMenu.classList.remove('collapsed');
                 navbarToggle.classList.remove('collapsed');
@@ -49,9 +49,7 @@ function Navbar(props) {
 
                 navbarToggle.textContent = '+'
             }
-        }}>
-            ×
-        </button>
+        }}>×</button>
   </>);
 }
 
