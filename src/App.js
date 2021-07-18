@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Toolbar from './components/Toolbar';
+import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -37,7 +37,7 @@ function App() {
     if(page === '/') setPage('/home');
 
     return (<>
-        <Toolbar setPage={setPage}/>
+        <Navbar setPage={setPage}/>
         {getPage(page.replace(/\/$/, ''))}
     </>);
 }
