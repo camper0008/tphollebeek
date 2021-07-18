@@ -46,7 +46,7 @@ function Portfolio() {
             <p>Jeg har også lavet mange projekter i Lua, som et dialogsystem, samt mange UI projekter, og andre ting der ikke er færdig endnu.</p>
             <img class="project" src={dtImage} alt="et slideshow af et login system og et blog system"></img>
             <p><i>(projekt under arbejde)</i></p>
-          <img className="icon" src={footerIcon} alt="Et blåt ikon der forestiller en portfolio."></img>
+          <img className="icon" src={footerIcon} alt="Et blåt ikon der forestiller en portfolio." height="52" width="52"></img>
         </div>
     );
 }

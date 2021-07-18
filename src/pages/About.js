@@ -25,7 +25,7 @@ function About() {
             <p>For det meste af tiden lytter jeg til rock eller alternativ rock som Junkie, Floats, The Frights, Beach Goons, Surf Curse, Mexican Slum Rats og mange andre.</p>
             <p>Derudover også meget punk rock som Wavves, FIDLAR, Descendants, Dead Kennedys, Misfits og Black Flag.</p>
 
-            <img className="icon" src={footerIcon} alt="Et ikon af en blå silhuet."></img>
+            <img className="icon" src={footerIcon} alt="Et ikon af en blå silhuet." height="52" width="52"></img>
         </div>
 
     );

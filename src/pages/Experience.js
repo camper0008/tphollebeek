@@ -26,7 +26,7 @@ function Experience() {
             <h2>Personlige</h2>
             <p>Når jeg arbejder på et projekt, især hvis det er noget der interesserer mig som f.eks. matematik el. programmering, kan jeg let blive grebet af det og arbejde meget fokuseret.</p>
             
-            <img className="icon" src={footerIcon} alt="Et blåt ikon af en medalje."></img>
+            <img className="icon" src={footerIcon} alt="Et blåt ikon af en medalje." height="52" width="52"></img>
         </div>
     );
   }
