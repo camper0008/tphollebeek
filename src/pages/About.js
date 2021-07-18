@@ -3,7 +3,7 @@ import footerIcon from '../assets/images/icons/person-blue.svg'
 
 function About() {
     return (
-        <div className="section">
+        <section className="section">
             <h1>min historie</h1>
             <h2>min interesse indenfor IT</h2>
             <img className="me" src={headshotImage} height="300" alt="Mig, en blond dreng med langt hår der laver fredstegn med fingrene."></img>
@@ -26,7 +26,7 @@ function About() {
             <p>Derudover også meget punk rock som Wavves, FIDLAR, Descendants, Dead Kennedys, Misfits og Black Flag.</p>
 
             <img className="icon" src={footerIcon} alt="Et ikon af en blå silhuet." height="52" width="52"></img>
-        </div>
+        </section>
 
     );
   }

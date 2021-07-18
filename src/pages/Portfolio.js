@@ -6,7 +6,7 @@ import dtImage from '../assets/images/dt.apng';
 
 function Portfolio() {
     return (
-        <div className="section">
+        <section className="section">
           <h1>Projekter</h1>
 
           <h2>Min hjemmeside</h2>
@@ -47,7 +47,7 @@ function Portfolio() {
             <img class="project" src={dtImage} alt="et slideshow af et login system og et blog system"></img>
             <p><i>(projekt under arbejde)</i></p>
           <img className="icon" src={footerIcon} alt="Et blåt ikon der forestiller en portfolio." height="52" width="52"></img>
-        </div>
+        </section>
     );
 }
 
