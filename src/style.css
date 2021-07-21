@@ -143,6 +143,10 @@ a::hover {
     cursor: pointer;
 }
 
+.rating-container {
+    padding-bottom: 0.25em;
+}
+
 .icon {
     height: 3.25rem;
     float: right;

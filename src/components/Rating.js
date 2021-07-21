@@ -3,7 +3,7 @@ import skillEmpty from '../assets/images/icons/skill-none-white.svg'
 
 function Rating(props) {
   return (
-    <div>
+    <div className="rating-container">
         {Array.apply(null, { length: props.length }).map((e, i) => (
             <img src={skillFilled} alt="En fyldt cirkel"></img>
         ))}
