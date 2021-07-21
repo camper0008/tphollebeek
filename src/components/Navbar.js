@@ -25,9 +25,9 @@ function Navbar(props) {
     <nav className="navbar-menu" id="navbar-menu">
         <NavbarLink name="Hjem" page="/" setPage={props.setPage} />
         <span className="navbar-divider">|</span>
-        <NavbarLink name="Erfaring" page="/experience" setPage={props.setPage} />
-        <span className="navbar-divider">|</span>
         <NavbarLink name="Projekter" page="/portfolio" setPage={props.setPage} />
+        <span className="navbar-divider">|</span>
+        <NavbarLink name="Erfaring" page="/experience" setPage={props.setPage} />
         <span className="navbar-divider">|</span>
         <NavbarLink name="Om mig" page="/about" setPage={props.setPage} />
         <span className="navbar-divider">|</span>
