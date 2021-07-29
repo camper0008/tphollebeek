@@ -33,7 +33,7 @@ function Portfolio() {
             <p>Alt frontend er skabt af mig inkl. programmering i HTML, CSS og TypeScript, og alt backendarbejdet er lavet af <a href="https://simonfromjakobsen.netlify.app" target="_blank" rel="noreferrer">Simon</a>.</p>
             <p>Du kan finde github siden for det projekt <a href="https://github.com/SimonFJ20/MessAnger/tree/frontend-v2" target="_blank" rel="noreferrer">her</a>.</p>
             <p>Ligesom denne side, er webappen også bygget til mobiler, dog skal man gå ind på /mobile for at få adgang til den, hvilket man ikke behøver på denne side.</p>
-            <img className="project" src={messangerImage} alt="Et webapp der forestiller en chatting app. Den er sort og grøn i tema."></img>
+            <img className="project" src={messangerImage} alt="et webapp der forestiller en chatting app. den er sort og grøn i tema."></img>
             <p><i>demobillede af vores webapp.</i></p>
 
           <h2>FirmaCorp Site</h2>
@@ -52,7 +52,7 @@ function Portfolio() {
             <img class="project" src={dtImage} alt="et slideshow af et login system, blog system og blog editor system."></img>
             <p>Jeg har også lavet mange projekter i Lua, som et dialogsystem, samt mange UI projekter, og andre ting der ikke er færdig endnu.</p>
             <p><i>(projekt under arbejde)</i></p>
-          <img className="icon" src={footerIcon} alt="Et blåt ikon der forestiller en portfolio." height="52" width="52"></img>
+          <img className="icon" src={footerIcon} alt="et blåt ikon der forestiller en portfolio." height="52" width="52"></img>
         </section>
     );
 }

@@ -6,7 +6,7 @@ function About() {
         <section className="section">
             <h1>min historie</h1>
             <h2>min interesse indenfor IT</h2>
-            <img className="me" src={headshotImage} height="300" alt="Mig, en blond dreng med langt hår der laver fredstegn med fingrene."></img>
+            <img className="me" src={headshotImage} height="300" alt="en blond dreng med langt hår der laver fredstegn med fingrene"></img>
             
             <p>Min barndom var fyldt med videospil. Siden jeg var helt ung, kan jeg huske at havde spillet Day of Defeat: Source, Counter Strike: Source og lignende på min fars computer.</p>
             <p>Senere fik jeg også min egen computer, og som enhver unge, der spiller meget, kommer man til at tænke på, hvor sejt det ville være at lave sine egne spil, hvor man selv har kreativ kontrol.</p>
@@ -25,7 +25,7 @@ function About() {
             <p>For det meste af tiden lytter jeg til rock eller alternativ rock som Junkie, Floats, The Frights, Beach Goons, Surf Curse, Mexican Slum Rats og mange andre.</p>
             <p>Derudover også meget punk rock som Wavves, FIDLAR, Descendants, Dead Kennedys, Misfits og Black Flag.</p>
 
-            <img className="icon" src={footerIcon} alt="Et ikon af en blå silhuet." height="52" width="52"></img>
+            <img className="icon" src={footerIcon} alt="en blå silhuet af en person" height="52" width="52"></img>
         </section>
 
     );

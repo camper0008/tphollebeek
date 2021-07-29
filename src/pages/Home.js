@@ -22,7 +22,7 @@ function Home() {
             <h1>velkommen</h1>
             <p>Hej, jeg er Pieter, en <span id="age">{age}</span> år gammel student og programmør.</p>
             <p>Hvis du klikker på de links øverste oppe (eller til venstre, hvis du er på mobil), kan du få mere at vide om mig.</p>
-            <img className="icon" src={footerIcon} alt="Et blåt ikon af et hus." height="52" width="52"></img>
+            <img className="icon" src={footerIcon} alt="et blåt ikon af et hus" height="52" width="52"></img>
         </section>
     );
   }
