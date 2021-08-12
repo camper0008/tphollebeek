@@ -9,42 +9,31 @@
     <link href="assets/images/icons/favicon.ico" rel="shortcut icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet"> 
     <title>Hjem</title>
 </head>
 <body>
-    <!-- wow, inspect element alligevel. -->
-    <!-- mobile navbar toggle -->
-    <input type="checkbox" id="navbar-mobile-toggle">
-    <label for="navbar-mobile-toggle" class="navbar-menu-toggle"></label>
-    
-    <nav class="navbar-menu">
-        <a class="navbar-link" href="/">hjem</a>
-        <span class="navbar-divider">|</span>
-        <a class="navbar-link" href="/portfolio">projekter</a>
-        <span class="navbar-divider">|</span>
-        <a class="navbar-link" href="/experience">erfaring</a>
-        <span class="navbar-divider">|</span>
-        <a class="navbar-link" href="/about">om mig</a>
-        <span class="navbar-divider">|</span>
-        <a class="navbar-link" href="/contact">kontakt</a>
-    </nav>
-    <section class="section footer">
-        <h1>velkommen</h1>
-        <p>Hej, jeg er Pieter, en <span id="age">17</span> år gammel student og programmør.</p>
-        <p>Hvis du klikker på de links øverste oppe (eller til venstre, hvis du er på mobil), kan du få mere at vide om mig.</p>
-        <img class="icon" src="assets/images/icons/home-blue.svg" alt="et blåt ikon af et hus.">
+    <div class="hero">
+        <div class="hero__item-container">
+            <h1 class="hero__title">theis pieter hollebeek</h1>
+            <h2 class="hero__subtitle">programmør, webudvikler</h2>
+        </div>
+        <div class="hero__item-container">
+            <a href="#Title" class="hero__arrow-container">
+                <div class="hero__arrow">
+                    <div class="hero__arrow__head"></div>
+                    <div class="hero__arrow__head"></div>
+                </div>
+                <div class="hero__arrow">
+                    <div class="hero__arrow__head"></div>
+                    <div class="hero__arrow__head"></div>
+                </div>    
+            </a>
+        </div>
+    </div>
+    <section>
+        <h1 id="Title">Title</h1>
+        <p>Text</p>
     </section>
-    <script>
-        const element = document.getElementById('age');
-        const birthday = Date.UTC(2004, 4, 18);
-        let ageInMilliseconds = Date.now() - birthday;
-
-        setInterval(() => {
-            ageInMilliseconds = Date.now() - birthday;
-            element.textContent = (ageInMilliseconds/(1000*60*60*24*365.25)).toFixed(9);
-        }, 1)
-    </script>
 </body>
 </html>
