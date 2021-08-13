@@ -9,8 +9,8 @@
     --accent-darkest: #232323;
     --accent-black: #000000;
 
-    --font-brand: 'Source Code Pro', monospace;
-    font-family: 'Open Sans', sans-serif;
+    --ff-text: 'Open Sans', sans-serif;
+    --ff-code: 'Source Code Pro', monospace;
 }
 
 html {
@@ -45,11 +45,12 @@ nav {
     height: 3rem;
     width: 100%;
 
-    transition: 0.2s ease-in background-color;
+    transition: 0.2s ease-in all;
+    transition-property: background-color;
 }
 
 nav > p {
-    font-family: var(--font-text);
+    font-family: var(--ff-text);
     font-weight: bold;
 
     justify-self: flex-start;
@@ -58,7 +59,7 @@ nav > p {
 }
 
 nav > a {
-    font-family: var(--font-text);
+    font-family: var(--ff-text);
     font-weight: bold;
 
     height: max-content;
@@ -83,20 +84,11 @@ nav > a {
     center/cover
     url("assets/images/hero-light.jpg");
 }
-.hero__item-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
-    width: 80%;
-    height: 33%;    
-}
-
-.hero__item-container > * {
+.hero > * {
     margin: 0;
     
-    font-family: var(--font-brand);
+    font-family: var(--ff-code);
     font-weight: 500;
     text-align: center;
 
@@ -111,52 +103,6 @@ nav > a {
 .hero__subtitle {
     color: var(--accent-black);
     font-size: clamp(2rem, -0.875rem + 6.333vmin, 8rem);
-}
-
-@keyframes hero__arrow--float {
-    from {
-        transform: translateY(-10%)
-    }
-    to {
-        transform: translateY(10%)
-    }
-}
-
-.hero__arrow-container {
-    padding: 2.5rem;
-    
-    cursor: pointer;
-    
-    animation: 
-    hero__arrow--float
-    alternate
-    2.5s 
-    ease-in-out 
-    infinite;
-}
-
-.hero__arrow {
-    position: relative;
-    width: clamp(3rem, -0.875rem + 4.333vw, 8rem);
-    height: clamp(3rem, -0.875rem + 4.333vw, 8rem);
-    
-    transform: rotate(225deg) translate(25%, 25%);
-}
-
-.hero__arrow__head {
-    position: absolute;
-    background-color: var(--accent-darker);
-    border-radius: clamp(0.5rem, -2rem + 5.333vw, 1.5rem);
-    
-    --head-width: clamp(0.5rem, -2rem + 2.333vw, 1.5rem);
-}
-.hero__arrow__head:nth-child(1) {
-    width: 100%;
-    height: var(--head-width);
-}
-.hero__arrow__head:nth-child(2) {
-    width: var(--head-width);
-    height: 100%;
 }
 
 /*=================================

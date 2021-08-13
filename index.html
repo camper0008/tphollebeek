@@ -21,22 +21,8 @@
         <a>kontakt</a>
     </nav>
     <div class="hero">
-        <div class="hero__item-container">
-            <h1 class="hero__title">theis pieter hollebeek</h1>
-            <h2 class="hero__subtitle">programmør, webudvikler</h2>
-        </div>
-        <div class="hero__item-container">
-            <a href="#Title" class="hero__arrow-container">
-                <div class="hero__arrow">
-                    <div class="hero__arrow__head"></div>
-                    <div class="hero__arrow__head"></div>
-                </div>
-                <div class="hero__arrow">
-                    <div class="hero__arrow__head"></div>
-                    <div class="hero__arrow__head"></div>
-                </div>    
-            </a>
-        </div>
+        <h1 class="hero__title">theis pieter hollebeek</h1>
+        <h2 class="hero__subtitle">programmør, webudvikler</h2>
     </div>
     <section>
         <h1 id="Title">Title</h1>
@@ -49,7 +35,7 @@
 
         const updateNavbar = () => {
             if (html.scrollTop !== 0) {
-                navbar.setAttribute('style', 'background-color: white;');
+                navbar.removeAttribute('style');
             } else {
                 navbar.setAttribute('style', 'background-color: transparent;');
             }
