@@ -9,10 +9,17 @@
     <link href="assets/images/icons/favicon.ico" rel="shortcut icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet"> 
-    <title>Hjem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>theis pieter hollebeek</title>
 </head>
 <body>
+    <nav id="navbar">
+        <p>theis pieter hollebeek</p>
+        <a>hjem</a>
+        <a>portfolio</a>
+        <a>kontakt</a>
+    </nav>
     <div class="hero">
         <div class="hero__item-container">
             <h1 class="hero__title">theis pieter hollebeek</h1>
@@ -35,5 +42,17 @@
         <h1 id="Title">Title</h1>
         <p>Text</p>
     </section>
+
+    <script>
+        const html = document.querySelector('html');
+        const navbar = document.querySelector('#navbar');
+        window.addEventListener('scroll', () => { // addEventListener('scroll') not supported for some reason.
+            if (html.scrollTop !== 0) {
+                navbar.setAttribute('style', 'background-color: white;')
+            } else {
+                navbar.setAttribute('style', 'background-color: transparent;')
+            }
+        })
+    </script>
 </body>
 </html>

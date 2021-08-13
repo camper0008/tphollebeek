@@ -1,8 +1,16 @@
 :root {
+    --accent-light: #B3B3B3;
+    --accent-lighter: #C3C3C3;
+    --accent-lightest: #DCDCDC;
+    --accent-white: #ffffff;
+
     --accent-dark: #4C4C4C;
     --accent-darker: #3C3C3C;
     --accent-darkest: #232323;
     --accent-black: #000000;
+
+    --font-brand: 'Source Code Pro', monospace;
+    font-family: 'Open Sans', sans-serif;
 }
 
 html {
@@ -14,9 +22,47 @@ body {
     color: var(--accent-darkest);
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 *:focus-visible {
     outline: 5px solid purple;
     transition: 50ms linear outline;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+    background-color: white;
+
+    height: 3rem;
+    width: 100%;
+
+    transition: 0.2s ease-in background-color;
+}
+
+nav > p {
+    font-family: var(--font-text);
+    font-weight: bold;
+
+    justify-self: flex-start;
+    margin-left: 2rem;
+    margin-right: auto;
+}
+
+nav > a {
+    font-family: var(--font-text);
+    font-weight: bold;
+
+    height: max-content;
+    margin-right: 2rem;
 }
 
 /*=================================
@@ -50,7 +96,7 @@ body {
 .hero__item-container > * {
     margin: 0;
     
-    font-family: 'Source Code Pro', monospace;
+    font-family: var(--font-brand);
     font-weight: 500;
     text-align: center;
 
