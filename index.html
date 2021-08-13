@@ -46,13 +46,17 @@
     <script>
         const html = document.querySelector('html');
         const navbar = document.querySelector('#navbar');
-        window.addEventListener('scroll', () => { // addEventListener('scroll') not supported for some reason.
+
+        const updateNavbar = () => {
             if (html.scrollTop !== 0) {
-                navbar.setAttribute('style', 'background-color: white;')
+                navbar.setAttribute('style', 'background-color: white;');
             } else {
-                navbar.setAttribute('style', 'background-color: transparent;')
+                navbar.setAttribute('style', 'background-color: transparent;');
             }
-        })
+        }
+
+        window.addEventListener('scroll', updateNavbar);
+        updateNavbar();
     </script>
 </body>
 </html>

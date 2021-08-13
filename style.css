@@ -40,7 +40,7 @@ nav {
     justify-content: right;
     align-items: center;
 
-    background-color: white;
+    background-color: white; /* incase javascript is disabled */
 
     height: 3rem;
     width: 100%;
