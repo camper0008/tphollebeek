@@ -21,7 +21,7 @@
         <ul>
             <li><a href="#">hjem</a></li>
             <li><a href="#about-me">om mig</a></li>
-            <li><a>portfolio</a></li>
+            <li><a href="#portfolio">portfolio</a></li>
             <li><a>kontakt</a></li>
         </ul>
     </nav>
@@ -34,20 +34,21 @@
             <h1 id="about-me">Om Mig</h1>
             <p>Mit navn er Theis Pieter Hollebeek, jeg er en 17 år gammel studerende og programmør.</p>
             <p>Jeg har haft interesse for teknologi siden jeg var meget lille, og har programmeret siden jeg var 13 år gammel.</p>
-            <p>Jeg vil selv mene, at programmering er noget jeg virkelig brænder for, primært pga. den problemløsning der kommer fra det, og den tilfredshed, der kommer af at endelig kunne se noget man har arbejdet på være "færdigt", i gåseøjne fordi man selvfølgelig aldrig er færdig når det kommer til programmering.</p>
+            <p>Programmering er noget jeg virkelig brænder for, primært på grund af den problemløsning der kommer fra det, og den tilfredshed, der kommer af at endelig kunne se noget man har arbejdet på være "færdigt", i gåseøjne fordi man selvfølgelig aldrig er færdig når det kommer til programmering.</p>
             <p>Hvis man spurgte mine kollegaer om mig, ville de sige, at når det kommer til programmering, er jeg er selvstændig, hårdtarbejdende, lærenem og kompetent.</p>
+            <p>Udenfor programmering har jeg også stor interesse for longboarding og skateboarding generelt, og musik.</p>
+            <p>Jeg har også tidligere brugt meget af min tid på at hjælpe nybegyndere med at lære at programmere på forskellige internetfora, men efter jeg startede på gymnasiet har jeg ikke haft tiden til det.</p>
         </div>
     </section>
     <section style="background-color: var(--brand-dark); color:var(--accent-white);">
         <div class="content-holder">
-            <h1>Title</h1>
+            <h1 id="portfolio">Portfolio</h1>
             <p>Text</p>
         </div>
     </section>
     <footer>
         <div class="content-holder">
             <h3>Designet og skabt af Theis Pieter Hollebeek</h3>
-            <p>Interesseret i mit arbejde? <a href="/contact">kontakt</a> mig.</p>
         </div>
     </footer>
 
@@ -57,9 +58,9 @@
 
         const updateNavbar = () => {
             if (html.scrollTop !== 0) {
-                navbar.removeAttribute('style');
+                navbar.removeAttribute('class');
             } else {
-                navbar.setAttribute('style', 'background-color: transparent;');
+                navbar.setAttribute('class', 'top-scrolled');
             }
         }
 
