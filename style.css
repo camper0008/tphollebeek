@@ -39,6 +39,8 @@ body {
     font-family: var(--ff-text);
 }
 
+/* navbar */
+
 nav {
     position: fixed;
     top: 0;
@@ -57,20 +59,38 @@ nav {
     transition-property: background-color;
 }
 
-nav > * {
+nav * {
     font-family: var(--ff-text);
     font-weight: bold;
 }
 
-nav > p {
+nav p {
     justify-self: flex-start;
     margin-left: 2rem;
     margin-right: auto;
 }
 
-nav > a {
-    height: max-content;
+nav a {
     margin-right: 2rem;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: unset;
+    list-style: none;
+}
+
+nav #navbar-mobile-toggle {display: none;}
+nav label[for="navbar-mobile-toggle"] {display: none;}
+
+/* regular */
+
+p {
+    line-height: 1.5;
 }
 
 a[href] {
@@ -102,7 +122,6 @@ a[href]:focus-visible::before {
 
 footer {
     background-color: var(--accent-darkest);
-    padding: 2rem 4rem;
     
     color: var(--accent-white);
     text-align: center;
@@ -110,7 +129,7 @@ footer {
 
 .content-holder {
     max-width: 1000px;
-    padding: 1rem;
+    padding: 3rem;
     margin: 0 auto;
 }
 
@@ -136,21 +155,23 @@ footer {
 .hero > * {
     margin: 0;
     
-    font-family: var(--ff-code);
-    font-weight: 500;
     text-align: center;
 
     overflow-wrap: break-word;
 }
 .hero__title {
     color: var(--brand-dark);
+    font-family: var(--ff-text);
     font-size: clamp(1.8rem, 6.333vmin, 8rem);
+    font-weight: 800;
 
     margin-bottom: 0.5em;
 }
 .hero__subtitle {
     color: var(--accent-black);
+    font-family: var(--ff-code);
     font-size: clamp(2rem, -0.875rem + 6.333vmin, 8rem);
+    font-weight: 500;
 }
 
 /*=================================
@@ -167,9 +188,36 @@ footer {
     }
 }
 
-@media only screen and (max-width: 550px) {
-    nav {
-        display: none;
+@media only screen and (max-width: 600px) {
+    nav ul {
+        position: fixed;
+        top: 3em;
+        right: 0;
+        padding: 2rem;
+        
+        background-color: white;
+
+        transform-origin: top;
+        transform: scaleY(0);
+        
+        transition: 0.2s ease-in-out transform;
+    }
+    nav #navbar-mobile-toggle:checked ~ ul {
+        transform: scaleY(1);
+    }
+    nav ul li {
+        display: list-item;
+        padding: 0.75rem 0;
+    }
+    nav label[for="navbar-mobile-toggle"] {
+        display: unset;
+
+        background-color: white;
+        
+        height: 100%;
+        padding: 0 2rem;
+        font-size: 2em;
+        cursor: pointer;    
     }
 }
 
