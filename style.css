@@ -19,7 +19,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -29,9 +28,7 @@ html {
     transition: 50ms linear outline;
 }
 
-/*=================================
-            GENERICS 
-=================================*/
+/* ==== generics ==== */
 
 body {
     margin: 0;
@@ -40,7 +37,55 @@ body {
     font-family: var(--ff-text);
 }
 
-/* navbar */
+footer {
+    background-color: var(--accent-darkest);
+    
+    color: var(--accent-white);
+    text-align: center;
+}
+
+.content-holder {
+    max-width: 1000px;
+    padding: 3rem;
+    margin: 0 auto;
+}
+
+p {
+    line-height: 1.5;
+}
+
+a:not([href]) {
+    opacity: 0.5;
+}
+
+a[href] {
+    position: relative;
+    font-weight: bold;
+    
+    color: inherit;
+    text-decoration: none;
+    
+    z-index: 1;
+}
+a[href]::before {
+    content: "";
+    
+    background-color: var(--brand-dark);
+    opacity: 0.5;
+    
+    position: absolute;
+    inset: 0;
+    top: 66%;
+    
+    z-index: -1;
+}
+a[href]:hover::before,
+a[href]:focus-visible::before {
+    top: 0;
+    transition: 0.2s ease-out top;
+}
+
+/* ==== navbar ==== */
 
 nav {
     position: fixed;
@@ -91,62 +136,12 @@ nav ul li {
     list-style: none;
 }
 
-nav #navbar-mobile-toggle {display: none;}
-nav label[for="navbar-mobile-toggle"] {display: none;}
-
-/* regular */
-
-p {
-    line-height: 1.5;
+nav #navbar-mobile-toggle,
+nav label[for="navbar-mobile-toggle"] {
+    display: none;
 }
 
-a:not([href]) {
-    opacity: 0.5;
-}
-
-a[href] {
-    position: relative;
-    font-weight: bold;
-    
-    color: inherit;
-    text-decoration: none;
-    
-    z-index: 1;
-}
-a[href]::before {
-    content: "";
-    
-    background-color: var(--brand-dark);
-    opacity: 0.5;
-    
-    position: absolute;
-    inset: 0;
-    top: 66%;
-    
-    z-index: -1;
-}
-a[href]:hover::before,
-a[href]:focus-visible::before {
-    top: 0;
-    transition: 0.2s ease-out top;
-}
-
-footer {
-    background-color: var(--accent-darkest);
-    
-    color: var(--accent-white);
-    text-align: center;
-}
-
-.content-holder {
-    max-width: 1000px;
-    padding: 3rem;
-    margin: 0 auto;
-}
-
-/*=================================
-               HERO 
-=================================*/
+/* ==== hero ==== */
 
 .hero {
     display: flex;
@@ -185,9 +180,7 @@ footer {
     font-weight: 500;
 }
 
-/*=================================
-              Media 
-=================================*/
+/* ==== media queries ==== */
 
 @media screen and (prefers-reduced-motion: reduce) {
     html {
@@ -199,7 +192,7 @@ footer {
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     nav,
     nav.top-scrolled {
         background-color: var(--accent-white);
