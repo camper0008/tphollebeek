@@ -117,7 +117,7 @@ a[href]::before {
     content: "";
     
     background-color: var(--brand-dark);
-    opacity: 0.66;
+    opacity: 0.5;
     
     position: absolute;
     inset: 0;
