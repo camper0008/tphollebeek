@@ -109,7 +109,7 @@ nav {
     align-items: center;
 
     background-color: var(--accent-white); /* incase javascript is disabled */
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 2px rgba(127, 127, 127);
 
     height: 3rem;
     width: 100%;
@@ -229,7 +229,7 @@ nav label[for="navbar-mobile-toggle"] {
     nav,
     nav.top-scrolled {
         background-color: var(--accent-white);
-        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 2px rgba(127, 127, 127);
     }
     nav ul {
         position: fixed;
@@ -262,21 +262,23 @@ nav label[for="navbar-mobile-toggle"] {
 }
 
 
-/*@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     :root {
         --accent-dark: #B3B3B3;
         --accent-darker: #C3C3C3;
-        --accent-darkest: #DCDCDC;
-        --accent-black: #ffffff;
-    
+        --accent-darkest: #FAFAFA;
+        --accent-black: #FFFFFF;
+
         --accent-light: #4C4C4C;
         --accent-lighter: #3C3C3C;
         --accent-lightest: #232323;
-        --accent-white: #000000;
-
-        
+        --accent-white: #161616;
     }
     .hero {
         background-image: URL("assets/images/hero-dark.jpg")
     }
-}*/
+    footer {
+        background-color: var(--brand-dark);
+        color: var(--accent-black);
+    }
+}
