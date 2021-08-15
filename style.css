@@ -41,10 +41,10 @@ section:nth-child(even) {
     background-color: var(--accent-lightest);
 }
 
-section *:first-child {
+section > *:first-child {
     margin-top: 0;
 }
-section *:last-child {
+section > *:last-child {
     margin-bottom: 0;
 }
 
@@ -191,6 +191,28 @@ nav label[for="navbar-mobile-toggle"] {
     font-family: var(--ff-code);
     font-size: clamp(2rem, -0.875rem + 6.333vmin, 8rem);
     font-weight: 500;
+}
+
+/* ==== diverse ==== */
+
+.ul-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+}
+.ul-grid * {
+    text-align: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.ul-grid p {
+    margin: 0 auto;
+    margin-bottom: 0.8em;
+    border-bottom: 1px solid currentColor;
+    width: max-content;
+}
+.ul-grid ul {
+    margin-bottom: 1em;
 }
 
 /* ==== media queries ==== */
