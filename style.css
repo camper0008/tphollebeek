@@ -248,6 +248,8 @@ nav label[for="navbar-mobile-toggle"] {
     nav.top-scrolled {
         background-color: var(--accent-white);
         box-shadow: 0px 0px 2px rgba(127, 127, 127);
+
+        transition: none;
     }
     nav ul {
         position: fixed;
