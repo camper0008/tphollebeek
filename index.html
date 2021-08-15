@@ -26,6 +26,7 @@
         <input id="navbar-mobile-toggle" type="checkbox">
         <label for="navbar-mobile-toggle">☰</label>
         <ul>
+            <li><button id="toggle-dark-theme">🌙</button></li>
             <li><a href="#">hjem</a></li>
             <li><a href="#about-me">om mig</a></li>
             <li><a href="#skills">kompetencer</a></li>
@@ -98,7 +99,7 @@
     <section>
         <div class="content-holder">
             <h1 id="contact">Kontakt</h1>
-            <p>Jeg kan kontaktes på telefon ved <a href="tel:+4571200491">71 20 04 91</a> eller gennem email ved <a href="mailto:tphollebeek@gmail.com">tphollebeek@gmail.com</a>. Hvis du ringer og jeg ikke fanger den skal jeg nok prøve at ringe tilbage så snart som muligt, ellers er du også fri til at sende en sms eller email, som jeg læser ofte.</p>
+            <p>Jeg kan kontaktes på telefon ved <a href="tel:+4571200491">71 20 04 91</a> eller gennem email ved <a href="mailto:tphollebeek@gmail.com">tphollebeek@gmail.com</a>. Hvis du ringer og jeg ikke fanger den skal jeg nok ringe tilbage så snart som muligt, ellers er du også fri til at sende en sms eller email, som jeg læser ofte.</p>
         </div>
     </section>
     <footer>
@@ -107,20 +108,6 @@
         </div>
     </footer>
 
-    <script>
-        const html = document.querySelector('html');
-        const navbar = document.querySelector('#navbar');
-
-        const updateNavbar = () => {
-            if (html.scrollTop !== 0) {
-                navbar.removeAttribute('class');
-            } else {
-                navbar.setAttribute('class', 'top-scrolled');
-            }
-        }
-
-        window.addEventListener('scroll', updateNavbar);
-        updateNavbar();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

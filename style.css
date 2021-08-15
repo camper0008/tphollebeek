@@ -128,6 +128,20 @@ nav * {
     font-weight: bold;
 }
 
+nav #toggle-dark-theme {
+    all: unset;
+    
+    box-sizing: border-box; /* because all is unset */
+    margin-right: 2rem;
+    font-size: 1.25em;
+    cursor: pointer;
+
+    display: none; /* to make sure it shows only shows up with javascript enabled */
+}
+nav #toggle-dark-theme::selection {
+    background: transparent;
+}
+
 nav p {
     justify-self: flex-start;
     margin-left: 2rem;
@@ -225,7 +239,7 @@ nav label[for="navbar-mobile-toggle"] {
     }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 850px) {
     nav,
     nav.top-scrolled {
         background-color: var(--accent-white);
@@ -263,7 +277,7 @@ nav label[for="navbar-mobile-toggle"] {
 
 
 @media (prefers-color-scheme: dark) {
-    :root {
+    html:not(.light-theme-enabled) :root {
         --accent-dark: #B3B3B3;
         --accent-darker: #C3C3C3;
         --accent-darkest: #FAFAFA;
@@ -274,11 +288,31 @@ nav label[for="navbar-mobile-toggle"] {
         --accent-lightest: #232323;
         --accent-white: #161616;
     }
-    .hero {
+    html:not(.light-theme-enabled) .hero {
         background-image: URL("assets/images/hero-dark.jpg")
     }
-    footer {
+    html:not(.light-theme-enabled) footer {
         background-color: var(--brand-dark);
         color: var(--accent-black);
     }
+}
+
+/* ==== dark theme toggle ==== */
+html.dark-theme-enabled {
+    --accent-dark: #B3B3B3;
+    --accent-darker: #C3C3C3;
+    --accent-darkest: #FAFAFA;
+    --accent-black: #FFFFFF;
+
+    --accent-light: #4C4C4C;
+    --accent-lighter: #3C3C3C;
+    --accent-lightest: #232323;
+    --accent-white: #161616;
+}
+html.dark-theme-enabled .hero {
+    background-image: URL("assets/images/hero-dark.jpg")
+}
+html.dark-theme-enabled .footer {
+    background-color: var(--brand-dark);
+    color: var(--accent-black);
 }
