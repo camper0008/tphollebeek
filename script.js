@@ -37,7 +37,7 @@ const onPreferenceChange = () => {
     toggleDarkTheme();
 }
 
-mqList.addEventListener('change', onPreferenceChange)
+if (typeof mqList.addEventListener !== 'undefined') mqList.addEventListener('change', onPreferenceChange);
 darkThemeButton.addEventListener('click', toggleDarkTheme);
 window.addEventListener('scroll', updateNavbar);
 
