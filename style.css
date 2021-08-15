@@ -1,8 +1,8 @@
 :root {
     --accent-light: #B3B3B3;
     --accent-lighter: #C3C3C3;
-    --accent-lightest: #DCDCDC;
-    --accent-white: #ffffff;
+    --accent-lightest: #FAFAFA;
+    --accent-white: #FFFFFF;
 
     --accent-dark: #4C4C4C;
     --accent-darker: #3C3C3C;
@@ -37,6 +37,17 @@ body {
     font-family: var(--ff-text);
 }
 
+section:nth-child(even) {
+    background-color: var(--accent-lightest);
+}
+
+section *:first-child {
+    margin-top: 0;
+}
+section *:last-child {
+    margin-bottom: 0;
+}
+
 footer {
     background-color: var(--accent-darkest);
     
@@ -51,7 +62,7 @@ footer {
 }
 
 p {
-    line-height: 1.5;
+    line-height: 2;
 }
 
 a:not([href]) {
@@ -192,7 +203,7 @@ nav label[for="navbar-mobile-toggle"] {
     }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 750px) {
     nav,
     nav.top-scrolled {
         background-color: var(--accent-white);
