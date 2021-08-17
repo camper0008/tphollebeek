@@ -3,7 +3,7 @@ const closePortfolioViewer = () => {
     portfolioViewer.classList.add('hidden');
 
     const html = document.querySelector('html');
-    html.removeAttribute('style');;
+    html.removeAttribute('style');
 }
 
 const generatePortfolioViewer = () => {
@@ -24,6 +24,8 @@ const generatePortfolioViewer = () => {
     portfolioViewer.appendChild(portfolioCloseButton);
     portfolioViewer.appendChild(portfolioContent);
     document.body.appendChild(portfolioViewer);
+
+    window.addEventListener('keyup', e => e.keyCode === 27 ? closePortfolioViewer() : null)
 }
 
 
