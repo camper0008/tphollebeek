@@ -1,3 +1,4 @@
 # prevent things being dragged over from react branch
 /node_modules
 /build
+/public/assets/bundle.js
