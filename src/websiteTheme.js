@@ -24,7 +24,7 @@ const handlePreferenceChange = () => {
 
 const handleThemeToggleButton = () => {
     const themeToggleButton = document.querySelector('#toggle-website-theme');
-    themeToggleButton.setAttribute('style', 'display: initial;');
+    themeToggleButton.classList.add('js-enabled');
     themeToggleButton.addEventListener('click', toggleTheme);
 }
 
