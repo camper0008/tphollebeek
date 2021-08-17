@@ -1,15 +1,15 @@
 :root {
-    --accent-light: #B3B3B3;
-    --accent-lighter: #C3C3C3;
-    --accent-lightest: #FAFAFA;
-    --accent-white: #FFFFFF;
+    --clr-light: #B3B3B3;
+    --clr-lighter: #C3C3C3;
+    --clr-lightest: #FAFAFA;
+    --clr-white: #FFFFFF;
 
-    --accent-dark: #4C4C4C;
-    --accent-darker: #3C3C3C;
-    --accent-darkest: #232323;
-    --accent-black: #000000;
+    --clr-dark: #4C4C4C;
+    --clr-darker: #3C3C3C;
+    --clr-darkest: #232323;
+    --clr-black: #000000;
 
-    --brand-dark: #395993;
+    --clr-brand: #395993;
 
     --ff-text: 'Open Sans', sans-serif;
     --ff-code: 'Source Code Pro', monospace;
@@ -24,7 +24,7 @@ html {
 }
 
 *:focus-visible {
-    outline: 2px solid var(--accent-black);
+    outline: 2px solid var(--clr-black);
     transition: 50ms linear outline;
 }
 
@@ -32,13 +32,13 @@ html {
 
 body {
     margin: 0;
-    background-color: var(--accent-white);
-    color: var(--accent-darkest);
+    background-color: var(--clr-white);
+    color: var(--clr-darkest);
     font-family: var(--ff-text);
 }
 
 section:nth-child(even) {
-    background-color: var(--accent-lightest);
+    background-color: var(--clr-lightest);
 }
 
 section > *:first-child {
@@ -49,9 +49,9 @@ section > *:last-child {
 }
 
 footer {
-    background-color: var(--accent-darkest);
+    background-color: var(--clr-darkest);
     
-    color: var(--accent-white);
+    color: var(--clr-white);
     text-align: center;
 }
 
@@ -86,7 +86,7 @@ a[href] {
 a[href]::before {
     content: "";
     
-    background-color: var(--brand-dark);
+    background-color: var(--clr-brand);
     opacity: 0.5;
     
     position: absolute;
@@ -98,7 +98,7 @@ a[href]::before {
 a[href]:hover::before,
 a[href]:focus-visible::before {
     top: 0;
-    transition: 0.2s ease-out top;
+    transition: 200ms ease-out top;
 }
 
 /* ==== navbar ==== */
@@ -112,13 +112,13 @@ nav {
     justify-content: right;
     align-items: center;
 
-    background-color: var(--accent-white); /* incase javascript is disabled */
+    background-color: var(--clr-white); /* incase javascript is disabled */
     box-shadow: 0px 0px 2px rgba(127, 127, 127);
 
     height: 3rem;
     width: 100%;
 
-    transition: 0.2s ease-in all;
+    transition: 200ms ease-in all;
     transition-property: background-color, box-shadow;
 
     z-index: 10;
@@ -143,7 +143,8 @@ nav #toggle-website-theme {
 
     font-size: 1.25em;
     cursor: pointer;
-
+}
+nav #toggle-website-theme:not(.js-enabled) {
     display: none; /* to make sure it shows only shows up with javascript enabled */
 }
 nav #toggle-website-theme::selection {
@@ -201,7 +202,7 @@ nav label[for="navbar-mobile-toggle"] {
     overflow-wrap: break-word;
 }
 .hero__title {
-    color: var(--brand-dark);
+    color: var(--clr-brand);
     font-family: var(--ff-text);
     font-size: clamp(1.8rem, 6.333vmin, 8rem);
     font-weight: 800;
@@ -209,7 +210,7 @@ nav label[for="navbar-mobile-toggle"] {
     margin-bottom: 0.5em;
 }
 .hero__subtitle {
-    color: var(--accent-black);
+    color: var(--clr-black);
     font-family: var(--ff-code);
     font-size: clamp(2rem, -0.875rem + 6.333vmin, 8rem);
     font-weight: 500;
@@ -240,7 +241,8 @@ nav label[for="navbar-mobile-toggle"] {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     justify-items: center;
-    gap: 0.1rem;
+    gap: 0.5rem;
+    padding: 0.5rem;
 }
 
 .portfolio-grid img {
@@ -251,10 +253,25 @@ nav label[for="navbar-mobile-toggle"] {
 
 .portfolio-grid.js-enabled img {
     cursor: pointer;
+    outline: 0px solid transparent;
+    transition: 200ms ease-in outline, 200ms ease-in transform;
+}
+.portfolio-grid.js-enabled img:hover {
+    outline: 3px solid var(--clr-brand);
+    transform: scale(1.005);
+    z-index: 1;
+}
+.portfolio-grid.js-enabled img:focus-visible {
+    outline: 4px solid var(--clr-brand);
+    transform: scale(1.005);
+    z-index: 2;
+
+    transition-duration: 50ms;
+    transition-timing-function: linear;
 }
 
 .portfolio-grid:not(.js-enabled)::after {
-    content: "Kræver JavaScript til at fungere.";
+    content: "JavaScript kræves for at kunne se nærmere på portfolio.";
     
     position: absolute;
     inset: 0;
@@ -264,13 +281,13 @@ nav label[for="navbar-mobile-toggle"] {
     width: max-content;
     height: max-content;
     
-    background-color: var(--accent-darkest);
-    color: var(--accent-white);
+    background-color: var(--clr-darkest);
+    color: var(--clr-white);
     font-size: 1.2em;
     
     opacity: 0;
     
-    transition: 0.2s ease-in-out opacity;
+    transition: 200ms ease-in-out opacity;
 }
 
 .portfolio-grid:not(.js-enabled):active::after {
@@ -279,21 +296,52 @@ nav label[for="navbar-mobile-toggle"] {
 
 .portfolio-viewer {
     position: fixed;
-    inset: 3rem 0 0;
+    inset: 0;
 
-    background-color: rgba(127, 127, 127, 0.5);
+    padding: 2rem;
 
-    z-index: 5;
+    background-color: var(--clr-white);
+
+    z-index: 20;
 
     opacity: unset;
     pointer-events: unset;
 
-    transition: 1s all linear;
+    transition: 200ms opacity ease-in-out;
 }
 
 .portfolio-viewer.hidden {
     opacity: 0;
     pointer-events: none;
+}
+
+.portfolio-viewer__close-button {
+    all: unset;
+    box-sizing: border-box;
+
+    background-color: var(--clr-darkest);
+    padding: 0 0.7ch;
+    border-radius: 50%;
+
+    font-size: 2rem;
+    color: var(--clr-white);
+    
+    cursor: pointer;
+    outline: 0px solid transparent;
+    
+    transition: 50ms linear outline;
+}
+
+.portfolio-viewer__close-button:focus-visible {
+    outline: 4px solid var(--clr-brand);           
+}
+
+.portfolio-viewer__content {
+    overflow: auto;
+    margin-top: 1rem;
+    height: calc(100% - 5rem);
+    border: 1px solid var(--clr-light);
+    padding: 0 2rem;
 }
 
 /* ==== media queries ==== */
@@ -311,7 +359,7 @@ nav label[for="navbar-mobile-toggle"] {
 @media only screen and (max-width: 850px) {
     nav,
     nav.top-scrolled {
-        background-color: var(--accent-white);
+        background-color: var(--clr-white);
         box-shadow: 0px 0px 2px rgba(127, 127, 127);
 
         transition: none;
@@ -322,12 +370,12 @@ nav label[for="navbar-mobile-toggle"] {
         right: 0;
         padding: 2rem;
         
-        background-color: var(--accent-white);
+        background-color: var(--clr-white);
 
         transform-origin: top;
         transform: scaleY(0);
         
-        transition: 0.2s ease-in-out transform;
+        transition: 200ms ease-in-out transform;
     }
     nav #navbar-mobile-toggle:checked ~ ul {
         transform: scaleY(1);
@@ -338,7 +386,7 @@ nav label[for="navbar-mobile-toggle"] {
     }
     nav label[for="navbar-mobile-toggle"] {
         display: unset;
-        
+
         height: 100%;
         padding: 0 2rem;
         font-size: 2em;
@@ -349,41 +397,41 @@ nav label[for="navbar-mobile-toggle"] {
 
 @media (prefers-color-scheme: dark) {
     :root:not(.light-theme-enabled) {
-        --accent-dark: #B3B3B3;
-        --accent-darker: #C3C3C3;
-        --accent-darkest: #FAFAFA;
-        --accent-black: #FFFFFF;
+        --clr-dark: #B3B3B3;
+        --clr-darker: #C3C3C3;
+        --clr-darkest: #FAFAFA;
+        --clr-black: #FFFFFF;
 
-        --accent-light: #4C4C4C;
-        --accent-lighter: #3C3C3C;
-        --accent-lightest: #232323;
-        --accent-white: #161616;
+        --clr-light: #4C4C4C;
+        --clr-lighter: #3C3C3C;
+        --clr-lightest: #232323;
+        --clr-white: #161616;
     }
     html:not(.light-theme-enabled) .hero {
         background-image: URL("images/hero-dark.jpg")
     }
     html:not(.light-theme-enabled) footer {
-        background-color: var(--brand-dark);
-        color: var(--accent-black);
+        background-color: var(--clr-brand);
+        color: var(--clr-black);
     }
 }
 
 /* ==== dark theme toggle ==== */
 html.dark-theme-enabled {
-    --accent-dark: #B3B3B3;
-    --accent-darker: #C3C3C3;
-    --accent-darkest: #FAFAFA;
-    --accent-black: #FFFFFF;
+    --clr-dark: #B3B3B3;
+    --clr-darker: #C3C3C3;
+    --clr-darkest: #FAFAFA;
+    --clr-black: #FFFFFF;
 
-    --accent-light: #4C4C4C;
-    --accent-lighter: #3C3C3C;
-    --accent-lightest: #232323;
-    --accent-white: #161616;
+    --clr-light: #4C4C4C;
+    --clr-lighter: #3C3C3C;
+    --clr-lightest: #232323;
+    --clr-white: #161616;
 }
 html.dark-theme-enabled .hero {
     background-image: URL("images/hero-dark.jpg")
 }
 html.dark-theme-enabled .footer {
-    background-color: var(--brand-dark);
-    color: var(--accent-black);
+    background-color: var(--clr-brand);
+    color: var(--clr-black);
 }
