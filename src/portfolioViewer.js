@@ -3,7 +3,7 @@ const closePortfolioViewer = () => {
     portfolioViewer.classList.add('hidden');
 
     const html = document.querySelector('html');
-    html.style = "";
+    html.removeAttribute('style');;
 }
 
 const generatePortfolioViewer = () => {
@@ -33,6 +33,8 @@ const portfolioClicked = async (event) => {
     portfolioViewer.classList.remove('hidden');
     
     const portfolioViewerContent = document.querySelector('#portfolio-viewer__content');
+
+    portfolioViewerContent.innerHTML = '';
     
     const response = await fetch(`/assets/portfolio/${event.target.id.slice(11)}.html`);
     const text = await response.text();
