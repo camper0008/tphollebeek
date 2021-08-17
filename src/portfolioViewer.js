@@ -11,7 +11,6 @@ const generatePortfolioViewer = () => {
     portfolioViewer.id = 'portfolio-viewer'
     portfolioViewer.className = 'portfolio-viewer hidden';
 
-    
     const portfolioCloseButton = document.createElement('button');
     portfolioCloseButton.className = 'portfolio-viewer__close-button'
     portfolioCloseButton.innerText = '×';
@@ -34,7 +33,7 @@ const portfolioClicked = async (event) => {
     
     const portfolioViewerContent = document.querySelector('#portfolio-viewer__content');
 
-    portfolioViewerContent.innerHTML = '';
+    portfolioViewerContent.innerHTML = '<p>Indlæser...</p>';
     
     const response = await fetch(`/assets/portfolio/${event.target.id.slice(11)}.html`);
     const text = await response.text();
