@@ -19,3 +19,5 @@ const handlePortfolioViewer = () => {
         image.addEventListener('click', portfolioClicked);
     }
 }
+
+handlePortfolioViewer();
