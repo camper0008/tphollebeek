@@ -61,6 +61,10 @@ footer {
     margin: 0 auto;
 }
 
+img {
+    max-width: 100%;
+}
+
 p {
     line-height: 2;
     font-size: 1.1em;
@@ -130,7 +134,7 @@ nav * {
     font-weight: bold;
 }
 
-nav #toggle-dark-theme {
+nav #toggle-dark-mode {
     all: unset;
     
     box-sizing: border-box; /* because all is unset */
@@ -142,7 +146,7 @@ nav #toggle-dark-theme {
 
     display: none; /* to make sure it shows only shows up with javascript enabled */
 }
-nav #toggle-dark-theme::selection {
+nav #toggle-dark-mode::selection {
     background: transparent;
 }
 
@@ -231,6 +235,20 @@ nav label[for="navbar-mobile-toggle"] {
     width: max-content;
 }
 
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    justify-items: center;
+    gap: 0.1rem;
+}
+
+.portfolio-grid img {
+    display: block;
+    object-fit: contain;
+    background-color: var(--brand-dark);
+    height: 100%;
+}
+
 /* ==== media queries ==== */
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -283,7 +301,7 @@ nav label[for="navbar-mobile-toggle"] {
 
 
 @media (prefers-color-scheme: dark) {
-    html:not(.light-theme-enabled) :root {
+    :root:not(.light-mode-enabled) {
         --accent-dark: #B3B3B3;
         --accent-darker: #C3C3C3;
         --accent-darkest: #FAFAFA;
@@ -294,17 +312,17 @@ nav label[for="navbar-mobile-toggle"] {
         --accent-lightest: #232323;
         --accent-white: #161616;
     }
-    html:not(.light-theme-enabled) .hero {
+    html:not(.light-mode-enabled) .hero {
         background-image: URL("assets/images/hero-dark.jpg")
     }
-    html:not(.light-theme-enabled) footer {
+    html:not(.light-mode-enabled) footer {
         background-color: var(--brand-dark);
         color: var(--accent-black);
     }
 }
 
-/* ==== dark theme toggle ==== */
-html.dark-theme-enabled {
+/* ==== dark mode toggle ==== */
+html.dark-mode-enabled {
     --accent-dark: #B3B3B3;
     --accent-darker: #C3C3C3;
     --accent-darkest: #FAFAFA;
@@ -315,10 +333,10 @@ html.dark-theme-enabled {
     --accent-lightest: #232323;
     --accent-white: #161616;
 }
-html.dark-theme-enabled .hero {
+html.dark-mode-enabled .hero {
     background-image: URL("assets/images/hero-dark.jpg")
 }
-html.dark-theme-enabled .footer {
+html.dark-mode-enabled .footer {
     background-color: var(--brand-dark);
     color: var(--accent-black);
 }
