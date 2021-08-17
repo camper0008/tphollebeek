@@ -34,7 +34,7 @@ const portfolioClicked = async (event) => {
     
     const portfolioViewerContent = document.querySelector('#portfolio-viewer__content');
     
-    const response = await fetch(`/public/assets/portfolio/${event.target.id.slice(11)}.html`);
+    const response = await fetch(`/assets/portfolio/${event.target.id.slice(11)}.html`);
     const text = await response.text();
     portfolioViewerContent.innerHTML = text;
     
