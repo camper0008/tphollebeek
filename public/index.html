@@ -24,7 +24,7 @@
     <nav id="navbar">
         <p>theis pieter hollebeek</p>
         <input id="navbar-mobile-toggle" type="checkbox">
-        <label for="navbar-mobile-toggle">☰</label>
+        <label for="navbar-mobile-toggle" aria-label="menu">☰</label>
         <ul>
             <li><button id="toggle-website-theme" aria-label="skift farvetema">🌙</button></li>
             <li><a href="#">Hjem</a></li>
@@ -41,6 +41,7 @@
     <section id="about-me">
         <div class="content-holder">
             <h1>Om Mig</h1>
+            <img id="me" src="assets/images/me.jpeg" width="200px" alt="en smilende dreng med langt lyst hår og en grå sweater">
             <p>Mit navn er Theis Pieter Hollebeek, jeg er en 17 år gammel studerende og programmør.</p>
             <p>Jeg har haft interesse for teknologi siden jeg var meget lille, og har programmeret siden jeg var 13 år gammel.</p>
             <p>Programmering er noget jeg virkelig brænder for, primært på grund af den problemløsning der kommer fra det, og den tilfredshed, der kommer af at endelig kunne se noget man har arbejdet på være "færdigt", i gåseøjne fordi man selvfølgelig aldrig er færdig når det kommer til programmering.</p>
@@ -106,12 +107,12 @@
             <noscript><p>Det kræver JavaScript for at læse min portfolio.</p></noscript>
         </div>
         <div class="portfolio-grid">
-            <img tabindex="0" src="assets/images/website-redesign.png" id="portfolio__website">
-            <img tabindex="0" src="assets/images/messanger.png" id="portfolio__messanger">
-            <img tabindex="0" src="assets/images/dt-blog-draft.png" id="portfolio__datatech-project">
-            <img tabindex="0" src="assets/images/firmacorp_splash.png" id="portfolio__firmacorp">
-            <img tabindex="0" src="assets/images/0s-1s.png" id="portfolio__0s-1s">
-            <img tabindex="0" src="assets/images/misc.png" id="portfolio__misc">
+            <img aria-label="min hjemmeside" alt="forsiden for min hjemmeside" tabindex="0" src="assets/images/website-redesign.png" id="portfolio__website">
+            <img aria-label="MessAnger, en chat app" alt="en chat webapp med grønt og sort tema, lidt ligesom fra filmen The Matrix" tabindex="0" src="assets/images/messanger.png" id="portfolio__messanger">
+            <img aria-label="datatech project, en bloggingside for datateknikere" alt="en blogging webapp med lilla og mørkegrå tema" tabindex="0" src="assets/images/dt-blog-draft.png" id="portfolio__datatech-project">
+            <img aria-label="EUD eksamensprojekt, FirmaCorp" alt="en mockup side for salg af produkter af et firma navngivet FirmaCorp" tabindex="0" src="assets/images/firmacorp_splash.png" id="portfolio__firmacorp">
+            <img aria-label="0s and 1s, et multiplayer kryds og bolle spil" alt="en hjemmeside der forestiller kryds og bolle, hvor spiller 0 har vundet." tabindex="0" src="assets/images/0s-1s.png" id="portfolio__0s-1s">
+            <img aria-label="diverse projekter" alt="blå tekst der siger 'diverse projekter' lagt ovenpå et billede af en landsby" tabindex="0" src="assets/images/misc.png" id="portfolio__misc">
         </div>
     </section>
     <section id="contact">
