@@ -361,11 +361,13 @@ nav label[for="navbar-mobile-toggle"] {
 
 /* ==== media queries ==== */
 
-@media screen and (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
     }
-    * {
+    *,
+    *::before,
+    *::after {
         transition: none !important;
         animation: none !important;
     }
