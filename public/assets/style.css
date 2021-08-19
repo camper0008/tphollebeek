@@ -160,6 +160,9 @@ nav p {
     justify-self: flex-start;
     margin-left: 2rem;
     margin-right: auto;
+    white-space: pre;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 nav a {
@@ -225,7 +228,7 @@ nav label[for="navbar-mobile-toggle"] {
 
 .ul-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
 }
 .ul-grid * {
