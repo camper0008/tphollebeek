@@ -45,15 +45,25 @@ const portfolioClicked = async (event) => {
     html.style = "overflow: hidden";
 }
 
+const removeAnchors = () => {
+    const anchors = document.querySelectorAll('.js-disabled-portfolio');
+    const portfolioGrid = document.querySelector('.portfolio-grid')
+
+    for (let i = 0; i < anchors.length; i++) {
+        const anchor = anchors[i];
+        portfolioGrid.appendChild(anchor.children[0]);
+        anchor.remove();
+    }}
+
 const handlePortfolioViewer = () => {
     generatePortfolioViewer();
 
-    const portfolioGrid = document.querySelector('.portfolio-grid');
-    portfolioGrid.classList.add('js-enabled');
+    removeAnchors();
 
     const portfolioImages = document.querySelectorAll('.portfolio-grid img');
     for (let i = 0; i < portfolioImages.length; i++) {
         const image = portfolioImages[i];
+        image.setAttribute('tabindex', '0');
         image.addEventListener('click', portfolioClicked);
         image.addEventListener('keyup', e => e.keyCode === 13 ? portfolioClicked() : null);
     }

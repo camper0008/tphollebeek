@@ -151,7 +151,6 @@ nav #toggle-website-theme::selection {
     background: transparent;
 }
 nav #toggle-website-theme:focus-visible {
-    /* because all is unset */
     outline: 2px solid var(--clr-black);
     transition: 50ms linear outline;
 }
@@ -261,47 +260,23 @@ nav label[for="navbar-mobile-toggle"] {
     height: 100%;
 }
 
-.portfolio-grid.js-enabled img {
+.portfolio-grid img {
     cursor: pointer;
     outline: 1px solid var(--clr-light);
     transition: 200ms ease-in outline, 200ms ease-in transform;
 }
-.portfolio-grid.js-enabled img:hover {
+.portfolio-grid img:hover {
     outline: 3px solid var(--clr-brand);
     transform: scale(1.005);
     z-index: 1;
 }
-.portfolio-grid.js-enabled img:focus-visible {
+.portfolio-grid img:focus-visible {
     outline: 4px solid var(--clr-brand);
     transform: scale(1.005);
     z-index: 2;
 
     transition-duration: 50ms;
     transition-timing-function: linear;
-}
-
-.portfolio-grid:not(.js-enabled)::after {
-    content: "JavaScript kræves for at kunne se nærmere på portfolio.";
-    
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    padding: 0.5em;
-    
-    width: max-content;
-    height: max-content;
-    
-    background-color: var(--clr-darkest);
-    color: var(--clr-white);
-    font-size: 1.2em;
-    
-    opacity: 0;
-    
-    transition: 200ms ease-in-out opacity;
-}
-
-.portfolio-grid:not(.js-enabled):active::after {
-    opacity: 1;
 }
 
 .portfolio-viewer {
