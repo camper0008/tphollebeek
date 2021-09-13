@@ -244,7 +244,6 @@ nav label[for="navbar-mobile-toggle"] {
 }
 
 .portfolio-grid {
-    position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-auto-rows: 1fr;
@@ -258,21 +257,18 @@ nav label[for="navbar-mobile-toggle"] {
     object-fit: cover;
     width: 100%;
     height: 100%;
-}
-
-.portfolio-grid img {
     cursor: pointer;
     outline: 1px solid var(--clr-light);
     transition: 200ms ease-in outline, 200ms ease-in transform;
 }
 .portfolio-grid img:hover {
     outline: 3px solid var(--clr-brand);
-    transform: scale(1.005);
+    transform: scale(1.025);
     z-index: 1;
 }
 .portfolio-grid img:focus-visible {
     outline: 4px solid var(--clr-brand);
-    transform: scale(1.005);
+    transform: scale(1.025);
     z-index: 2;
 
     transition-duration: 50ms;
