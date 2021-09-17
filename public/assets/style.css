@@ -225,18 +225,18 @@ nav label[for="navbar-mobile-toggle"] {
 
 /* ==== grids ==== */
 
-.ul-grid {
+.skill-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
 }
-.ul-grid * {
+.skill-grid * {
     text-align: center;
     list-style: none;
     margin: 0.33em 0;
     padding: 0;
 }
-.ul-grid p {
+.skill-grid p {
     margin: 0 auto;
     margin-bottom: 0.8em;
     border-bottom: 1px solid currentColor;
