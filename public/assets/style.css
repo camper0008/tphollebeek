@@ -328,6 +328,7 @@ nav label[for="navbar-mobile-toggle"] {
 }
 
 /* ==== misc ==== */
+
 #me {
     float: right;
     padding-left: 1rem;
@@ -356,21 +357,23 @@ nav label[for="navbar-mobile-toggle"] {
 
         transition: none;
     }
-    nav ul {
+    nav #navbar-mobile-container {
         position: fixed;
         top: 3em;
         right: 0;
+        overflow: hidden;
+    }
+    nav #navbar-mobile-container ul {
         padding: 2rem;
         
         background-color: var(--clr-white);
 
-        transform-origin: top;
-        transform: scaleY(0);
+        transform: translateY(-100%);
         
         transition: 200ms ease-in-out transform;
     }
-    nav #navbar-mobile-toggle:checked ~ ul {
-        transform: scaleY(1);
+    nav #navbar-mobile-toggle:checked ~ #navbar-mobile-container ul {
+        transform: translateY(0%);
     }
     nav ul li {
         display: list-item;
