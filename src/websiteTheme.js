@@ -13,7 +13,7 @@ const toggleTheme = () => {
     } else {
         html.classList.add('light-theme-enabled');
         html.classList.remove('dark-theme-enabled');
-        themeToggleButton.innerText = '🌙';
+        themeToggleButton.innerText = '🌜';
     }
 }
 
