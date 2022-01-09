@@ -3,18 +3,23 @@
         justify-content: center;
         flex-wrap: wrap;
         padding-bottom: 1rem;
-    }
-    nav h1 {
-        width: 100%;
-        margin-bottom: 0;
-        text-align: center;
+        
+        h1 {
+            width: 100%;
+            margin-bottom: 0;
+            text-align: center;
+        }
     }
     #me {
         float: none;
-        transition: none;
-        box-shadow: none;
-    }
-    #me:hover {
-        transform: none;
+        margin-left: 1rem;
+
+        &::before,
+        &::after {
+            content: none;
+        }
+        &:hover {
+            transform: none;
+        }
     }
 }
