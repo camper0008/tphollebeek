@@ -1,14 +1,35 @@
-@import 'components/global';
+@import 'global';
+@import 'components/font';
 @import 'components/nav';
 @import 'components/project';
+@import 'components/me';
+@import 'media';
 
 h1, h2 {
-    color: var(--clr-highlight);
+    color: var(--clr-brand);
     font-style: italic;
+}
+
+a {
+    color: var(--clr-brand);
+}
+
+body {
+    margin: 0;
+    background-color: var(--clr-bg-0);
+    color: var(--clr-text);
+    font-family: "Public Sans";
+    font-size: 1.1em;
+    line-height: 1.4;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
 }
 
 .content {
     max-width: 1000px;
-    padding: 0 1rem;
+    padding: 0 clamp(1.5rem, 8vw, 3rem);
     margin: 0 auto;
 }
