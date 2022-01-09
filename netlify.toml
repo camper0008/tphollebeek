@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/"
-  to = "/about"
+  from = "/about"
+  to = "/"
   status = 200
