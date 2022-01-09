@@ -35,27 +35,3 @@
         transform: scale(1.05) rotateZ(1deg);
     }
 }
-
-/* wave */
-#me {
-    #wave {
-        inset: 0;
-        line-height: normal;
-        font-size: 2rem;
-        width: max-content;
-        height: max-content;
-        position: absolute;
-        margin: auto auto auto 0;
-        transform: translateY(100%);
-        opacity: 0;
-        transition: 200ms ease-in-out all;
-        transition-property: opacity transform;
-    }
-    &:hover {
-        #wave {
-            transform: translate(-75%, 100%);
-            opacity: 1;
-            z-index: 1;
-        }
-    }
-}
