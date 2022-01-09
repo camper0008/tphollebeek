@@ -42,6 +42,14 @@ h1, h2 {
     font-style: italic;
 }
 
+.divider {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--clr-background-alt);
+    transform: scale(0.8);
+    height: 1px;
+}
+
 .content {
     max-width: 1000px;
     padding: 0 1rem;
