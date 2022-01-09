@@ -1,0 +1,37 @@
+#me {
+    float: right;
+    margin: 1rem 0 2rem 2rem;
+    transition: 200ms ease-in-out transform;
+    position: relative;
+    line-height: 0;
+
+    img {
+        border-radius: 0.25rem;
+    }
+
+    /* transitioning box shadows without performance hit */
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        transition: 200ms ease-in-out opacity;
+    }
+    &::before {
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+        opacity: 1;
+    }
+    &::after {
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.4);
+        opacity: 0;
+    }
+    &:hover {
+        &::before {
+            opacity: 0;
+        }
+        &::after {
+            opacity: 1;
+        }
+        transform: scale(1.05) rotateZ(1deg);
+    }
+}

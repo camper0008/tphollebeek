@@ -10,7 +10,7 @@ I chose to redesign my website in order to have more clarity and prevent having 
 
 [ ] Fancy background
 
-[ ] Image of me somewhere
+[x] Image of me somewhere
 
 [ ] Technologies i have experience with
 
