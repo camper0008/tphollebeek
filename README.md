@@ -4,14 +4,14 @@ I chose to redesign my website in order to have more clarity and prevent having 
 
 ## To-do list:
 
-[ ] Contact information
+- [ ] Contact information
 
-[ ] Blog system / "project overview"
+- [ ] Blog system / "project overview"
 
-[ ] Fancy background
+- [ ] Fancy background
 
-[x] Image of me somewhere
+- [x] Image of me somewhere
 
-[ ] Technologies i have experience with
+- [ ] Technologies i have experience with
 
-[ ] Quick navigation
+- [ ] Quick navigation
