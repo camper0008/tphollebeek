@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "sass": "^1.47.0"
+  },
+  "scripts": {
+    "sass-dev": "sass --watch --update --style=expanded src/scss:public/css",
+    "sass-prod": "sass --no-source-map --style=compressed src/scss:public/css"
+  },
+  "name": "tphollebeek",
+  "version": "1.0.0",
+  "description": "My website.",
+  "repository": "https://github.com/camper0008/tphollebeek.git",
+  "author": "piet <spetakel123@gmail.com>",
+  "license": "GPL"
+}
