@@ -1,8 +1,8 @@
 :root {
     --clr-text: #eceff4;
     --clr-highlight: #8fbcbb; 
-    --clr-background: #2e3440;
-    --clr-background-alt: #3b4252;
+    --clr-bg-0: #2e3440;
+    --clr-bg-1: #3b4252;
 }
 
 *,
@@ -23,7 +23,7 @@
 
 body {
     margin: 0;
-    background-color: var(--clr-background);
+    background-color: var(--clr-bg-0);
     color: var(--clr-text);
     font-family: "Public Sans";
     font-size: 1.1em;
@@ -42,24 +42,27 @@ h1, h2 {
     font-style: italic;
 }
 
-.divider {
-    max-width: 1000px;
-    margin: 0 auto;
-    background-color: var(--clr-background-alt);
-    transform: scale(0.8);
-    height: 1px;
-}
-
 .content {
     max-width: 1000px;
     padding: 0 1rem;
     margin: 0 auto;
 }
+.project-header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
 
 .tags {
-    display: grid;
     gap: 1rem;
 }
-.tags > * {
+.tags > p {
+    width: max-content;
+    display: inline-block;
+    padding: 0.2rem;
+    background-color: var(--clr-bg-1);
     margin: 0;
+    margin-bottom: 0.3rem;
+    margin-right: 0.3rem;
+    font-size: 0.8em;
 }
