@@ -1,0 +1,14 @@
+@import 'components/global';
+@import 'components/nav';
+@import 'components/project';
+
+h1, h2 {
+    color: var(--clr-highlight);
+    font-style: italic;
+}
+
+.content {
+    max-width: 1000px;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
