@@ -1,0 +1,49 @@
+:root {
+    --clr-text: #eceff4;
+    --clr-highlight: #8fbcbb; 
+    --clr-background: #2e3440;
+    --clr-background-alt: #3b4252;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Public Sans";
+    src: url("fonts/PublicSans.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Public Sans";
+    src: url("fonts/PublicSans-Italic.ttf") format("truetype");
+    font-style: italic;
+}
+
+body {
+    margin: 0;
+    background-color: var(--clr-background);
+    color: var(--clr-text);
+    font-family: "Public Sans";
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+img {
+    float: left;
+    border-radius: 0.25rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+h1, h2 {
+    color: var(--clr-highlight);
+    font-style: italic;
+}
+
+.content {
+    max-width: 1000px;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
