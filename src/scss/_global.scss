@@ -1,0 +1,17 @@
+:root {
+    --clr-text: #eceff4;
+    --clr-brand: #8fbcbb;
+    --clr-bg-0: #2e3440;
+    --clr-bg-1: #3b4252;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*:focus-visible {
+    outline: 2px solid var(--clr-brand);
+}
+
