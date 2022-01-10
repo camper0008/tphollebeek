@@ -6,9 +6,9 @@ I chose to redesign my website in order to have more clarity and prevent having 
 
 - [ ] Contact information
 
-- [ ] Project overview
+- [x] Project overview
 
-- [ ] Convert page to work with [11ty](https://www.11ty.dev/) to use in project overview
+- [x] Convert page to work with [11ty](https://www.11ty.dev/) to use in project overview
 
 - [ ] Fancy background
 
