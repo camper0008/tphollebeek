@@ -1,8 +1,8 @@
 ---
 title: Test Article
-description: This is a test article.
-date: 1970-01-01
-tags: ["project", "rust"]
+description: This is a test article
+date: 2022-01-10
+tags: ["project", "rust", "multiple", "longer tags"]
 ---
 
 
