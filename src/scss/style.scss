@@ -5,15 +5,6 @@
 @import 'components/me';
 @import 'media';
 
-h1, h2 {
-    color: var(--clr-brand);
-    font-style: italic;
-}
-
-a {
-    color: var(--clr-brand);
-}
-
 body {
     margin: 0;
     background:
@@ -26,6 +17,30 @@ body {
     line-height: 1.4;
     min-height: 100vh;
 }
+
+h1, h2 {
+    color: var(--clr-brand);
+    font-style: italic;
+}
+
+a {
+    color: var(--clr-brand);
+}
+
+code {
+    background-color: var(--clr-bg-1);
+    font-size: 1rem;
+    padding: 0.15rem 0.2rem;
+    border-radius: 0.2rem;
+}
+
+pre {
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    background-color: var(--clr-bg-1);
+    overflow-x: auto;
+}
+
 
 img {
     max-width: 100%;
