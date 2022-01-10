@@ -18,11 +18,11 @@
         transition: 200ms ease-in-out opacity;
     }
     &::before {
-        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
         opacity: 1;
     }
     &::after {
-        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.4);
         opacity: 0;
     }
     &:hover {
