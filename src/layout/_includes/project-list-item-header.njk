@@ -1,0 +1,10 @@
+<div class="project-list-item__header">
+    <h3>{{ project.data.title }}</h3>
+    <div class="project-list-item__tags">
+        {%- for tag in project.data.tags -%}
+            {%- if tag != "project" -%}
+            <span>{{ tag }}</span>
+            {%- endif -%}
+        {%- endfor -%}
+    </div>
+</div>
