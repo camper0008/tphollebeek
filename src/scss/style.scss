@@ -16,6 +16,9 @@ a {
 
 body {
     margin: 0;
+    background:
+        url("/images/top-left.svg") top left no-repeat,
+        url("/images/bottom-right.svg") bottom right no-repeat;
     background-color: var(--clr-bg-0);
     color: var(--clr-text);
     font-family: "Public Sans";
