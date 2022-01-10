@@ -3,22 +3,39 @@
     margin: 0 auto;
     list-style-type: none;
     padding: 0;
-}
-.project {
-    padding: 0.25rem 0;
-}
-.tags {
-    gap: 1rem;
 
-    p {
-        width: max-content;
-        display: inline-block;
-        padding: 0.2rem 0.4rem;
-        border-radius: 0.2rem;
-        background-color: var(--clr-bg-1);
-        margin: 0;
-        margin-bottom: 0.3rem;
-        margin-right: 0.3rem;
-        font-size: 0.8em;
+    .project-list-item {
+        margin: 2rem 0;
+
+        .project-list-item__timestamp {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin: 0;
+        }
+
+        .project-list-item__header {
+            display: flex;
+            align-items: center;
+            margin-top: 0.5em;
+
+            h3 {
+                margin: 0;
+                margin-right: 0.66rem;
+            }
+
+            .project-list-item__tags {
+                gap: 0.33rem;
+                display: flex;
+            
+                span {
+                    width: max-content;
+                    display: inline-block;
+                    padding: 0.2rem 0.4rem;
+                    border-radius: 0.2rem;
+                    background-color: var(--clr-bg-1);
+                    font-size: 0.8em;
+                }
+            }
+        }
     }
 }
