@@ -3,9 +3,8 @@ title: Test Article
 description: This is a test article.
 date: 1970-01-01
 tags: ["project", "rust"]
+layout: article.njk
 ---
-
-
 
 # This is a test website header
 

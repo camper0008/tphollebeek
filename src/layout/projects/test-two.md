@@ -3,9 +3,8 @@ title: Test Article
 description: This is a test article
 date: 2022-01-10
 tags: ["project", "rust", "multiple", "longer tags"]
+layout: article.njk
 ---
-
-
 
 # This is a test website header
 
