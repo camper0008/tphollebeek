@@ -27,6 +27,7 @@
             .project-list-item__tags {
                 gap: 0.33rem;
                 display: flex;
+                flex-wrap: wrap;
             
                 span {
                     width: max-content;
