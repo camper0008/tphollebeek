@@ -15,3 +15,8 @@
     outline: 2px solid var(--clr-brand);
 }
 
+::selection {
+    background-color: var(--clr-text);
+    color: var(--clr-bg-0);
+}
+
