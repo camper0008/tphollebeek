@@ -1,5 +1,5 @@
 ---
-title: Rust Brainfuck Interpreter
+title: brainfuck interpreter
 description: En brainfuck interpreter skrevet i Rust, originalt skrevet i C.
 date: 2022-01-10
 tags: ["project", "rust"]
@@ -20,7 +20,7 @@ Hvad de instrukser gør, samt mere information omkring Brainfuck, kan [findes p�
 
 Da jeg hørte om Rust, var jeg meget nysgerrig om konceptet, men havde ikke fået en chance til at afprøve det; jeg var desuden også tøvende, da sproget lignede at det havde et stort "new language syndrome", hvor de skulle omskrive *alt* syntaks, da de for alt i verden skulle undgå at være "endnu en (indsæt sprog her) klon", og det fra et C og TypeScript perspektiv lignede noget rent hokus pokus.
 
-Dog, op til Juleferien hvor alle dem der ikke på fysisk ferie, hvertifald er mentalt, sad jeg og havde mangel af ting at lave; vi var blevet færdig med det meste af [Neocheckin](/projects/neocheckin) for et par uger siden, og siden da havde vi arbejdet på personlige projekter mens vi ventede på det nye skridt.
+Dog, op til Juleferien hvor alle dem der ikke på fysisk ferie, hvertifald er mentalt, sad jeg og havde mangel af ting at lave; vi var blevet færdig med det meste af [neocheckin](/projects/neocheckin) for et par uger siden, og siden da havde vi arbejdet på personlige projekter mens vi ventede på det nye skridt.
 
 Det var på det tidspunkt, at jeg satte mig ned og ville lære Rust.
 
@@ -28,14 +28,47 @@ Mit første projekt var ikke dog ikke en brainfuck interpreter; det var en endnu
 
 Kort sagt: det gik ikke helt perfekt; jeg gjorde det mere kompleks end det behøvede at være fordi jeg ville bevise at jeg kunne gøre det som jeg ville havde gjort det i C. Men det var okay! Jeg lærte meget omkring syntaksen og Rust som et sprog.
 
-Der gik 3 uger, hvor jeg arbejdede på personlige projekter i stedet, men på den 20 december kom jeg tilbage til Rust, denne gang for at lave en brainfuck interpreter.
+Der gik 3 uger, hvor jeg arbejdede på personlige projekter i stedet, men på den 21. december kom jeg tilbage til Rust, denne gang for at lave en brainfuck interpreter.
 
 ## brainfuck-interpreter-rust
 
-Jeg kaldte mit projekt brainfuck-interpreter-rust.
+Nu hvor jeg havde lært mere om Rust, tænkte jeg som en sand Rustacean, at jeg ville omskrive mine tidligere projekter i Rust, f.eks. min C brainfuck interpreter, det ville være rimelig simpelt.
+
+Jeg startede den 21. december, og blev færdig med den første version knapt en dag senere.
+
+Der viste sig dog at være et problem: Den var forfærdeligt, *forfærdeligt* sløv.
+
+Det betød ikke meget med simple programmer som f.eks. Hello World, men da mit program tog 2 minutter om at køre en benchmark som tog min kollega få sekunder at køre, vidste jeg der var noget galt.
+
+Selv da mit program var "færdigt", var der pludselig kommet en ny udfordring: at optimere.
+
+## Optimering
+
+Noget hurtigt brainfuck teori:
+
+Brainfuck programmer bruger de to tegn `[` og `]` for at definere start og slut på et loop; for at kende op på ned og vide hvilke begyndelser der havde hvilket slutninger, genererede jeg nogle "bracket pairs", et struct der havde en `begin` og `end` værdi, der så nogenlunde sådan her ud:
+
+```rust
+#[derive(Copy, Clone)]
+pub struct BracketPair {
+   pub begin: u32,
+   pub end: u32,
+}
+```
+Det mest indlysende var, at jeg copierede og clonede en BracketPair, hver gang jeg skulle finde et par med matchende værdier.
+
+Jeg fiksede det hurtigt, ved at frem for at returnere et BracketPair hvor en værdi matchede enten start eller slut, returnerede jeg bare ren start og slut positionerne som havde en matchende slut/start position af en værdi, som et tal.
+
+Grunden til at jeg gjorde det i første sted, var fordi at den var primært direkte omskrevet fra det originale C kode.
+
+Det viste sig at gøre den hurtigere, men kun med meget få sekunder, så de nemmere løsninger virkede desværre ikke. Jeg skulle omskrive min interpreter.
+
+Jeg omskrev derfor min brainfuck interpreter til at bruge nogle "instruction" tokens, dvs. et struct der representerede et hvis instruktionstype med en hvis instruktionsværdi, f.eks. ville `+` have en type af `Increment` og en værdi af `1`
 
 ## Links
 
 Dette projekt findes på [Github](https://github.com/camper0008/brainfuck-interpreter-rust).
+
+Den originale C version findes også på [Github](https://github.com/camper0008/brainfuck-interpreter-cc).
 
 Mit Inverted Binary Tree i Rust findes også på [Github](https://github.com/camper0008/inverted-binary-tree-rust).
