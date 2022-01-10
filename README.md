@@ -12,7 +12,9 @@ I chose to redesign my website in order to have more clarity and prevent having 
 
 - [x] Convert page to work with [11ty](https://www.11ty.dev/) to use in project overview
 
-- [ ] Fancy background
+- [x] Fancy background
+
+- [ ] Even fancier background?
 
 - [x] Image of me somewhere
 
