@@ -1,14 +1,6 @@
-const padNumber = (num) => {
-    const stringified = num.toString();
-    if (stringified.length < 2)
-        return "0" + stringified;
-    else
-        return stringified;
-}
-
-const formatDate = (date) => {
-    return `${padNumber(date.getDate())}/${padNumber(date.getMonth()+1)}-${padNumber(date.getFullYear())}`
-}
+const months = ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"];
+const getStringifiedMonth = (month) => months[month];
+const formatDate = (date) => `${date.getDate()}. ${getStringifiedMonth(date.getMonth())} ${date.getFullYear()}`;
 
 
 module.exports = function(eleventyConfig) {
