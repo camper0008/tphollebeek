@@ -7,6 +7,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false);
     eleventyConfig.addPassthroughCopy({'src/images': 'images'});
     eleventyConfig.addPassthroughCopy({'src/fonts': 'fonts'});
+    eleventyConfig.addPassthroughCopy('src/favicon.ico');
     eleventyConfig.addNunjucksFilter("formattedDate", function(value) { return formatDate(value) });
     // Return your Object options:
     return {
