@@ -4,6 +4,8 @@ const months = ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "A
 const getStringifiedMonth = (month) => months[month];
 const formatDate = (date) => `${date.getDate()}. ${getStringifiedMonth(date.getMonth())} ${date.getFullYear()}`;
 
+const filterOffsiteAnchors = (html) => html.replaceAll("<a href=\"http", "<a target=\"_blank\" rel=\"noreferrer noopener\" href=\"http");
+
 module.exports = function(eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false);
     
@@ -11,8 +13,9 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy({'src/fonts': 'fonts'});
     eleventyConfig.addPassthroughCopy({'src/favicon.ico': 'favicon.ico'});
     
-    eleventyConfig.addNunjucksFilter("formattedDate", (value) => formatDate(value) );
+    eleventyConfig.addNunjucksFilter("formattedDate", formatDate );
     eleventyConfig.addNunjucksFilter("lower", (value) => value.toLowerCase() );
+    eleventyConfig.addNunjucksFilter("filterOffsiteAnchors", filterOffsiteAnchors );
     
     eleventyConfig.addPlugin(syntaxHighlight);
    

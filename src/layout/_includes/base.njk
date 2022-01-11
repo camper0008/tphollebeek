@@ -16,6 +16,6 @@
         <a href="/about">om mig</a>
         <a href="/projects">projekter</a>
     </header>
-    {{ content | safe }}
+    {{ content | filterOffsiteAnchors | safe }}
 </body>
 </html>
