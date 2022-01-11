@@ -16,6 +16,7 @@
         position: absolute;
         inset: 0;
         transition: 200ms ease-in-out opacity;
+        border-radius: 0.25rem;
     }
     &::before {
         box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
