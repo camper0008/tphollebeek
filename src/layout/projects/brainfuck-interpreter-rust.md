@@ -1,5 +1,5 @@
 ---
-title: brainfuck interpreter
+title: Brainfuck Interpreter
 description: En brainfuck interpreter skrevet i Rust, originalt skrevet i C.
 date: 2022-01-10
 tags: ["project", "rust"]
@@ -38,7 +38,7 @@ Jeg startede den 21. december, og blev færdig med den første version knapt en 
 
 Der viste sig dog at være et problem: Den var forfærdeligt, *forfærdeligt* sløv.
 
-Det betød ikke meget med simple programmer som f.eks. Hello World, men da mit program tog 2 minutter om at køre en benchmark som tog min kollega få sekunder at køre, vidste jeg der var noget galt.
+Det betød ikke meget med simple programmer som f.eks. Hello World, men da mit program tog ca. 2½ minut om at køre en benchmark som tog min kollega få sekunder at køre, vidste jeg der var noget galt.
 
 Selv da mit program var "færdigt", var der pludselig kommet en ny udfordring: at optimere.
 
@@ -57,9 +57,39 @@ pub struct BracketPair {
 ```
 Det mest indlysende var, at jeg copierede og clonede en BracketPair, hver gang jeg skulle finde et par med matchende værdier.
 
+```rust
+pub fn get_bracket_pair(&self, pos: u32) -> Option<BracketPair> {
+    for i in 0..self.bracket_pairs.len() {
+        if self.bracket_pairs[i].start == pos || self.bracket_pairs[i].end == pos {
+            return Some(self.bracket_pairs[i]);
+        }
+    }
+    None
+}
+```
+
 Jeg fiksede det hurtigt, ved at frem for at returnere et BracketPair hvor en værdi matchede enten start eller slut, returnerede jeg bare ren start og slut positionerne som havde en matchende slut/start position af en værdi, som et tal.
 
-Grunden til at jeg gjorde det i første sted, var fordi at den var primært direkte omskrevet fra det originale C kode.
+```rust
+pub fn get_bracket_start(&self, end: usize) -> usize {
+    for v in &self.bracket_pairs {
+        if v.end == end {
+            return v.start;
+        }
+    }
+    panic!("unopened bracket end character at '{}'", end)
+}
+pub fn get_bracket_end(&self, start: usize) -> usize {
+    for v in &self.bracket_pairs {
+        if v.start == start {
+            return v.end;
+        }
+    }
+    panic!("unclosed bracket start character at '{}'", start)
+}
+```
+
+Grunden til at jeg gjorde det i første sted, var fordi at jeg primært havde omskrevet det direkte fra C koden.
 
 Det viste sig at gøre den hurtigere, men kun med meget få sekunder, når jeg helst skulle have den ned flere minutter, så de nemmere løsninger virkede desværre ikke. Jeg skulle omskrive min interpreter.
 
@@ -67,8 +97,10 @@ Jeg omskrev derfor min brainfuck interpreter til at bruge nogle "instruction" to
 
 ```rust
 pub enum TokenType {
-    Increment, Decrement,
-    IncrementPointer, DecrementPointer,
+    Increment, 
+    Decrement,
+    IncrementPointer,
+    DecrementPointer,
     Input, Output,
     LoopBegin, LoopEnd,
     Comment,
@@ -97,7 +129,7 @@ blev til
 
 Derudover filtrerede jeg også alle `Comment` tokens ud, hvilket gjorde en overraskende større forskel end forventet, og vóila! Min Optimized Brainfuck Interpreter var færdig.
 
-Den endte med at gå fra ca. 2 minutter og 45 sekunder til en lynhurtig 1.615 sekunder, en 14200% forskel! I sidste ende endte jeg endda med at være hurtigere end min kollega med en ~0.4 sekunders forskel.
+Den endte med at gå fra ca. 2 minutter og 45 sekunder til en lynhurtig 1,615 sekunder, en >99% forskel! I sidste ende endte jeg endda med at være hurtigere end min kollega med en ~0,4 sekunders forskel.
 
 Udover det, lærte jeg også meget om Rust og dets funktionalitet ved at lave dette projekt.
 
