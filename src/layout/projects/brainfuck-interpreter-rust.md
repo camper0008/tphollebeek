@@ -8,9 +8,9 @@ layout: article.njk
 
 ## Hurtigt om brainfuck
 
-Brainfuck, også kendt gennem navnende "brainf\*ck" eller "brainfrick", er et "esoterisk" programmeringssprog, (Det vil sige, et sprog der generelt findes for at skulle være unikke, udfordrende eller interessante at bruge, kun for interessens skyld. De er generelt ikke skabt til at have noget praktisk brug.)
+Brainfuck, også kendt gennem navnende "brainf\*ck", "brainfrick" eller på flinkt dansk, "hjernevask", er et ["esoterisk" programmeringssprog](https://en.wikipedia.org/wiki/Esoteric_programming_language), det vil sige, et sprog der generelt findes for at skulle være unik, udfordrende eller interessant at bruge. De er generelt ikke skabt til at have noget réelt praktisk brug, da der findes bedre, "normale" sprog til at gøre det allerede.
 
-Brainfuck's tema er, at kunne have et [Turing-complete](https://en.wikipedia.org/wiki/Turing_completeness) sprog, med så få instrukser som muligt, og generelt at være så forvirrende at bruge som muligt.
+Brainfuck's tema er, at kunne have et [Turing-complete](https://en.wikipedia.org/wiki/Turing_completeness) sprog, med så få instrukser som muligt, og generelt at være så forvirrende at bruge som muligt (derfra navnet).
 
 Det udfører den ved at den kun bruger 8 instrukser i form af tegnene `+`, `-`, `<`, `>`, `[`, `]`, `,`, `.`, og en liste af unsigned 8 bit tal (den nørdede måde at sige "et tal fra 0 til 255") og 'pointer' (markør, der peger til hvor i listen man befinder sig); alting udover de 8 tegn er registreret som kommentarer.
 
@@ -38,13 +38,13 @@ Der gik 3 uger, hvor jeg arbejdede på personlige projekter i stedet, men på de
 
 ## brainfuck-interpreter-rust
 
-Nu hvor jeg havde lært mere om Rust, tænkte jeg som en sand 'Rustacean', at jeg ville omskrive mine tidligere projekter i Rust, f.eks. min C brainfuck interpreter, det ville være rimelig simpelt.
+Nu hvor jeg havde lært mere om Rust, tænkte jeg som en sand [Rustacean](https://www.rustaceans.org/), at jeg ville omskrive mine tidligere projekter i Rust, f.eks. min C brainfuck interpreter, da det ville være rimelig simpelt.
 
 Jeg startede den 21. december, og blev færdig med den første version knapt en dag senere.
 
-Der viste sig dog at være et problem: Den var forfærdeligt, *forfærdeligt* sløv.
+Der viste sig dog at være et problem: Den var forfærdeligt, *forfærdeligt* langsom.
 
-Det betød ikke meget med simple programmer som f.eks. Hello World, men da mit program tog ca. 2½ minut om at køre en benchmark som tog min kollega få sekunder at køre, vidste jeg der var noget galt.
+Det betød ikke meget med simple programmer som f.eks. Hello World, men da mit program tog ca. 2 ½ minut om at køre en benchmark som tog min kollega få sekunder at køre, vidste jeg der var noget galt.
 
 Selv da mit program var "færdigt", var der pludselig kommet en ny udfordring: at optimere.
 
@@ -97,9 +97,9 @@ pub fn get_bracket_end(&self, start: usize) -> usize {
 
 Grunden til at jeg gjorde det i første sted, var fordi at jeg primært havde omskrevet det direkte fra C koden.
 
-Det viste sig at gøre den hurtigere, men kun med meget få sekunder, når jeg helst skulle have den ned flere minutter, så de nemmere løsninger virkede desværre ikke. Jeg skulle omskrive min interpreter.
+Det viste sig at gøre den hurtigere, men kun med meget få sekunder, når jeg helst skulle have den ned flere minutter, så de nemmere løsninger virkede desværre ikke; Jeg skulle omskrive min interpreter.
 
-Jeg omskrev derfor min brainfuck interpreter til at bruge nogle "instruction" tokens, da jeg tidligere bare gik direkte gennem hvert tegn, dvs. et struct der representerede et hvis instruktionstype med en hvis instruktionsværdi, f.eks. ville `+` have en type af `Increment` og en værdi af `1`, mens en LoopBegin ville have en værdi af positionen af dens matchende `LoopEnd`.
+Jeg omskrev derfor min brainfuck interpreter til at bruge nogle "instruction" tokens, (da jeg tidligere bare gik direkte gennem hvert tegn), dvs. et struct der representerede en hvis instruktionstype med en hvis instruktionsværdi, f.eks. ville `+` have en type af `Increment` og en værdi af `1`, mens en `LoopBegin` instruktion ville have en værdi af positionen af dens matchende `LoopEnd`.
 
 ```rust
 pub enum TokenType {
@@ -117,7 +117,7 @@ pub struct Token {
 }
 ```
 
-Dette gjorde en meget stor forskel, nu behøvede jeg ikke længere at skulle gå igennem alle par af brackets før jeg kunne finde den rigtige, jeg kunne under runtime bare se hvad min nuværende token's type of værdi var.
+Dette gjorde en meget stor forskel, nu behøvede jeg ikke længere at skulle gå igennem alle par af brackets før jeg kunne finde den rigtige, hvis den havde en matchende type, kunne jeg bare bare se hvad min nuværende token's værdi var!
 
 Efter det, lavede jeg småting som hvis det er flere af de samme tokens sammen, ville jeg sætte dem sammen, så hvad der før ville være
 ```rust
