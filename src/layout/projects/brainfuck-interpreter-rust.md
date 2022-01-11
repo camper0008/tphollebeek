@@ -12,9 +12,15 @@ Brainfuck, også kendt gennem navnende "brainf\*ck" eller "brainfrick", er et "e
 
 Brainfuck's tema er, at kunne have et [Turing-complete](https://en.wikipedia.org/wiki/Turing_completeness) sprog, med så få instrukser som muligt, og generelt at være så forvirrende at bruge som muligt.
 
-Det udfører den ved at den kun bruger 8 instrukser i form af tegnene `+`, `-`, `<`, `>`, `[`, `]`, `,`, `.`, og en stack af unsigned 8 bit tal og stack "pointer" (markør, der beskriver hvor i stacken man befinder sig); alting udover de 8 tegn er registreret som kommentarer.
+Det udfører den ved at den kun bruger 8 instrukser i form af tegnene `+`, `-`, `<`, `>`, `[`, `]`, `,`, `.`, og en liste af unsigned 8 bit tal (den nørdede måde at sige "et tal fra 0 til 255") og 'pointer' (markør, der peger til hvor i listen man befinder sig); alting udover de 8 tegn er registreret som kommentarer.
 
-Hvad de instrukser gør, samt mere information omkring Brainfuck, kan [findes på Wikipedia](https://en.wikipedia.org/wiki/Brainfuck).
+Hvad de instruktioner specifikt gør, samt mere information om Brainfuck, er [bedre forklaret af dets Wikipedia-artikel](https://en.wikipedia.org/wiki/Brainfuck).
+
+Eksempelvis, her et et simpelt program jeg har skrevet der finder summen af numre, hvis resultatet er under 10 (f.eks. 5+4=9, 2+5=7, 8+1=9)
+
+```brainfuck
+,>,[-<+>]++++++++[<------>-]<.
+```
 
 ## Førstehåndsindtrykket af Rust
 
@@ -26,13 +32,13 @@ Det var på det tidspunkt, at jeg satte mig ned og ville lære Rust.
 
 Mit første projekt var ikke dog ikke en brainfuck interpreter; det var en endnu simplere ting: et inverted binary tree.
 
-Kort sagt: det gik ikke helt perfekt; jeg gjorde det mere kompleks end det behøvede at være fordi jeg ville bevise at jeg kunne gøre det som jeg ville havde gjort det i C. Men det var okay! Jeg lærte meget omkring syntaksen og Rust som et sprog.
+Kort sagt: det gik ikke helt perfekt; jeg gjorde det mere kompleks end det behøvede at være fordi jeg ville bevise at jeg kunne gøre det som jeg ville havde gjort det i C. Men det var okay! Jeg lærte meget om syntaksen og Rust som et sprog.
 
 Der gik 3 uger, hvor jeg arbejdede på personlige projekter i stedet, men på den 21. december kom jeg tilbage til Rust, denne gang for at lave en brainfuck interpreter.
 
 ## brainfuck-interpreter-rust
 
-Nu hvor jeg havde lært mere om Rust, tænkte jeg som en sand Rustacean, at jeg ville omskrive mine tidligere projekter i Rust, f.eks. min C brainfuck interpreter, det ville være rimelig simpelt.
+Nu hvor jeg havde lært mere om Rust, tænkte jeg som en sand 'Rustacean', at jeg ville omskrive mine tidligere projekter i Rust, f.eks. min C brainfuck interpreter, det ville være rimelig simpelt.
 
 Jeg startede den 21. december, og blev færdig med den første version knapt en dag senere.
 
@@ -93,7 +99,7 @@ Grunden til at jeg gjorde det i første sted, var fordi at jeg primært havde om
 
 Det viste sig at gøre den hurtigere, men kun med meget få sekunder, når jeg helst skulle have den ned flere minutter, så de nemmere løsninger virkede desværre ikke. Jeg skulle omskrive min interpreter.
 
-Jeg omskrev derfor min brainfuck interpreter til at bruge nogle "instruction" tokens, da jeg tidligere bare gik direkte gennem hvert tegn, dvs. et struct der representerede et hvis instruktionstype med en hvis instruktionsværdi, f.eks. ville `+` have en type af `Increment` og en værdi af `1`, mens en LoopBegin ville have en værdi af positionen af dens matchende LoopEnd.
+Jeg omskrev derfor min brainfuck interpreter til at bruge nogle "instruction" tokens, da jeg tidligere bare gik direkte gennem hvert tegn, dvs. et struct der representerede et hvis instruktionstype med en hvis instruktionsværdi, f.eks. ville `+` have en type af `Increment` og en værdi af `1`, mens en LoopBegin ville have en værdi af positionen af dens matchende `LoopEnd`.
 
 ```rust
 pub enum TokenType {
@@ -133,7 +139,7 @@ Den endte med at gå fra ca. 2 minutter og 45 sekunder til en lynhurtig 1,615 se
 
 Udover det, lærte jeg også meget om Rust og dets funktionalitet ved at lave dette projekt.
 
-## Links
+## Kildeliste
 
 Koden for alle disse projekter nævnt kan findes på min GitHub:
 
@@ -142,3 +148,5 @@ Koden for alle disse projekter nævnt kan findes på min GitHub:
 - [Brainfuck Interpreter - C](https://github.com/camper0008/brainfuck-interpreter-c).
 
 - [Rust Inverted Binary Tree](https://github.com/camper0008/inverted-binary-tree-rust).
+
+Mere information om Brainfuck er bedre forklaret af [dets Wikipedia-artikel](https://en.wikipedia.org/wiki/Brainfuck), bemærk at den er engelsk.
