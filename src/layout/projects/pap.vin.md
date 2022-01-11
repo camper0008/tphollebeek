@@ -1,6 +1,6 @@
 ---
 title: pap.vin
-description: Personlig hjemmeside. Artikel under arbejde.
+description: Personlig hjemmeside til at lære om server hosting og system administration. Og domænet lød sjovt. Det var 90% af grunden.
 date: 2022-01-11
 tags: ["project", "nginx", "server hosting", "sysadmin"]
 layout: article.njk
@@ -8,11 +8,11 @@ layout: article.njk
 
 ## Domænet 'pap.vin'
 
-Jeg var i færd med at kigge på domæner til en personlig hjemmeside, og kiggede på forskellige TLD (top level domains), som `dk`, `com` eller `site`, for at finde hvad jeg synes ville passe bedst; der fandt jeg så ud af, at man kunne bruge `vin` som et TLD.
+Jeg var i færd med at kigge på domæner til min hjemmeside, og kiggede på forskellige TLDs ([top-level domain(s)](https://en.wikipedia.org/wiki/Top-level_domain)), som `dk`, `com` eller `site`, for at finde hvad jeg synes ville passe bedst; der fandt jeg så ud af, at man kunne bruge `vin` som et TLD.
 
 Som en intern joke mellem kammerater synes jeg det derfor ville være morsomt at have et domæne, der hed [pap.vin](https://pap.vin), som jeg ville bruge sammen med en server til bl.a. filhosting og generelt at lære mere om server hosting og system administration.
 
-Den dag valgte jeg så at registrere domænet pap.vin, og købte en [DigitalOcean](https://www.digitalocean.com) droplet (en "droplet" er deres version af en server) til at følge med, samt oprettede jeg en [Cloudflare](https://www.cloudflare.com) konto til brug af deres DNS.
+Den dag valgte jeg så at registrere domænet pap.vin, og købte en [DigitalOcean](https://www.digitalocean.com) droplet (en "droplet" er deres version af en server) til at følge med, samt oprettede jeg en [Cloudflare](https://www.cloudflare.com) konto til brug af deres DNS og SSL-certifikater.
 
 ## Brugen af pap.vin
 
