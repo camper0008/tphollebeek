@@ -1,18 +1,22 @@
 @font-face {
     font-family: "Public Sans";
     src: url("/fonts/PublicSans.ttf") format("truetype");
+    font-display: swap;
 }
 @font-face {
     font-family: "Public Sans";
     src: url("/fonts/PublicSans-Italic.ttf") format("truetype");
     font-style: italic;
+    font-display: swap;
 }
 @font-face {
     font-family: "Red Hat Mono";
     src: url("/fonts/RedHatMono.ttf") format("truetype");
+    font-display: swap;
 }
 @font-face {
     font-family: "Red Hat Mono";
     src: url("/fonts/RedHatMono-Italic.ttf") format("truetype");
     font-style: italic;
+    font-display: swap;
 }
