@@ -103,9 +103,32 @@ a[href]:focus-visible::before {
 
 /* ==== navbar ==== */
 
-nav {
+#alert {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    text-align: center;
+    height: 3rem;
+    padding: 1.5rem;
+    line-height: 0;
+    margin: 0;
+    background-color: var(--clr-brand);
+}
+
+#alert a::before {
+    background-color: #ccc;
+    top: 80%;
+}
+
+#alert a[href]:hover::before, #alert a[href]:focus-visible::before {
+    top: 0;
+}
+
+nav {
+    position: fixed;
+    top: 3rem;
     left: 0;
 
     display: flex;
