@@ -11,7 +11,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy({'src/fonts': 'fonts'});
     eleventyConfig.addPassthroughCopy({'src/favicon.ico': 'favicon.ico'});
     
-    eleventyConfig.addNunjucksFilter("formattedDate", function(value) { return formatDate(value) });
+    eleventyConfig.addNunjucksFilter("formattedDate", (value) => formatDate(value) );
+    eleventyConfig.addNunjucksFilter("lower", (value) => value.toLowerCase() );
     
     eleventyConfig.addPlugin(syntaxHighlight);
    
