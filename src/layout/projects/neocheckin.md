@@ -5,7 +5,3 @@ date: 2022-01-10
 tags: ["project", "flutter", "go"]
 layout: article.njk
 ---
-
-## neocheckin
-
-artikel ikke skrevet endnu
