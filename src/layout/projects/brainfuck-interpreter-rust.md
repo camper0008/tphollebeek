@@ -135,7 +135,7 @@ Udover det, lærte jeg også meget om Rust og dets funktionalitet ved at lave de
 
 ## Links
 
-Koden for alle disse projekter nævnt kan findes på min Github:
+Koden for alle disse projekter nævnt kan findes på min GitHub:
 
 - [Brainfuck Interpreter - Rust](https://github.com/camper0008/brainfuck-interpreter-rust).
 
