@@ -4,7 +4,7 @@ I chose to redesign my website in order to have more clarity and prevent having 
 
 ## To-do list:
 
-- [ ] Contact information
+- [x] Contact information
 
 - [ ] Write 1-3 articles to get started
 
