@@ -97,7 +97,7 @@ pub fn get_bracket_end(&self, start: usize) -> usize {
 
 Grunden til at jeg gjorde det i første sted, var fordi at jeg primært havde omskrevet det direkte fra C koden.
 
-Det viste sig at gøre den hurtigere, men kun med meget få sekunder, når jeg helst skulle have den ned flere minutter, så de nemmere løsninger virkede desværre ikke; Jeg skulle omskrive min interpreter.
+Det viste sig at gøre den hurtigere, men kun med meget få sekunder, når jeg helst skulle have den ned flere minutter, så de nemmere løsninger virkede desværre ikke; jeg måtte omskrive min interpreter.
 
 Jeg omskrev derfor min brainfuck interpreter til at bruge nogle "instruction" tokens, (da jeg tidligere bare gik direkte gennem hvert tegn), dvs. et struct der representerede en hvis instruktionstype med en hvis instruktionsværdi, f.eks. ville `+` have en type af `Increment` og en værdi af `1`, mens en `LoopBegin` instruktion ville have en værdi af positionen af dens matchende `LoopEnd`.
 
@@ -117,9 +117,9 @@ pub struct Token {
 }
 ```
 
-Dette gjorde en meget stor forskel, nu behøvede jeg ikke længere at skulle gå igennem alle par af brackets før jeg kunne finde den rigtige, hvis den havde en matchende type, kunne jeg bare bare se hvad min nuværende token's værdi var!
+Dette gjorde en meget stor forskel; nu behøvede jeg ikke længere at skulle gå igennem alle par af brackets før jeg kunne finde den rigtige, hvis den havde en matchende type, kunne jeg bare bare se hvad min nuværende token's værdi var!
 
-Efter det, lavede jeg småting som hvis det er flere af de samme tokens sammen, ville jeg sætte dem sammen, så hvad der før ville være
+Efter det, for at optimisere *endnu* mere, lavede jeg småting som hvis det er flere af de samme tokens sammen, ville jeg sætte dem sammen, så hvad der før ville være
 ```rust
 [ 
     Token(Increment, 1), Token(Increment, 1), 
@@ -133,7 +133,11 @@ blev til
 [ Token(Increment, 8) ]
 ```
 
-Derudover filtrerede jeg også alle `Comment` tokens ud, hvilket gjorde en overraskende større forskel end forventet, og vóila! Min Optimized Brainfuck Interpreter var færdig.
+Hvilket er markant mindre instruktioner den skulle gå i gennem i længden.
+
+Derudover filtrerede jeg også alle `Comment` tokens ud, hvilket gjorde en overraskende større forskel end forventet.
+
+Vóila! Min optimiseret Brainfuck Interpreter var færdig.
 
 Den endte med at gå fra ca. 2 minutter og 45 sekunder til en lynhurtig 1,615 sekunder, en >99% forskel! I sidste ende endte jeg endda med at være hurtigere end min kollega med en ~0,4 sekunders forskel.
 
