@@ -1,7 +1,7 @@
 <ul class="project-list">
     {%- for project in collections.project | reverse -%}
     <li class="project-list-item">
-        <p class="project-list-item__timestamp">{{ project.date | formattedDate }}</p>
+        <time class="project-list-item__timestamp">{{ project.date | formattedDate }}</time>
         {% include 'project-list-item-header.njk' %}
         <p>{{ project.data.description }}</p>
         <a href="{{ project.url }}">Læs mere</a>
