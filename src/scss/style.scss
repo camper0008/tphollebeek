@@ -11,7 +11,9 @@ body {
     background:
         url("/images/top-left.svg") top left no-repeat,
         url("/images/bottom-right.svg") bottom right no-repeat,
-        radial-gradient(circle farthest-side at 0% 0%, var(--clr-bg-1) -50%, var(--clr-bg-0) 50%);
+        radial-gradient(circle farthest-side at 0% 0%, var(--clr-bg-1) -50%, transparent 30%),
+        radial-gradient(circle farthest-side at 100% 100%, var(--clr-bg-1) -50%, transparent 30%),
+        var(--clr-bg-0);
     background-color: var(--clr-bg-0);
     color: var(--clr-text);
     font-family: "Public Sans", sans-serif;

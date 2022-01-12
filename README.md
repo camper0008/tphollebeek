@@ -14,8 +14,6 @@ I chose to redesign my website in order to have more clarity and prevent having 
 
 - [x] Fancy background
 
-- [ ] Even fancier background?
-
 - [x] Image of me somewhere
 
 - [ ] Technologies i have experience with
