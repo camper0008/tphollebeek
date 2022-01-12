@@ -6,7 +6,7 @@ I chose to redesign my website in order to have more clarity and prevent having 
 
 - [x] Contact information
 
-- [ ] Write 1-3 articles to get started
+- [x] Write 1-3 articles to get started
 
 - [x] Project overview
 
