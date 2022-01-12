@@ -31,6 +31,6 @@ pap.vin kan derfor nu:
 
 ## Kildeliste
 
-Koden bag pap.vin kan findes på [GitHub](https://github.com/camper0008/pap.vin).
+Koden bag pap.vin (og pap.vin/flex) kan findes på [GitHub](https://github.com/camper0008/pap.vin).
 
 Selveste pap.vin kan findes på [pap.vin](https://pap.vin).
