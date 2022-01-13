@@ -33,7 +33,7 @@ function Navbar(props) {
         <span className="navbar-divider">|</span>
         <NavbarLink name="Kontakt" page="/contact" setPage={props.setPage} />
         <span className="navbar-divider">|</span>
-        <a href="https://tphollebeek.netlify.app" className="navbar-link">ny side</a>
+        <a href="https://v2-tphollebeek.netlify.app" className="navbar-link">ny side</a>
     </nav>
     <button 
         className="navbar-mobile-toggle" 
