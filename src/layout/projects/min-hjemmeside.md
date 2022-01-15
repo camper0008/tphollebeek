@@ -80,7 +80,7 @@ Jeg skulle selvfølgelig stadigvæk lave alting selv, men det har været en stor
 
 ## Kildeliste
 
-Siden er lavet med [11ty/eleventy](https://11ty.dev), [Sass](https://sass-lang.com/) og kærlighed.
+Siden er lavet med [11ty/eleventy](https://11ty.dev) og [Sass](https://sass-lang.com/).
 
 Siden's 1. version kan findes her: [1. version](https://react-v1-tphollebeek.netlify.app/)
 
