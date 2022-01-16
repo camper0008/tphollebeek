@@ -74,14 +74,18 @@ Jeg havde tidligere også prøvet at bruge bl.a. [Jekyll](https://jekyllrb.com/)
 
 Nu har jeg nogle nunjucks filer, der forklarer hvordan mit layout skal være, et par filter jeg har skrevet til at f.eks. formatere dato eller gøre så at links til andre sider åbner i en ny fane, og noget scss til at få det til at se flot ud, derfra kan jeg bare skrive nogle Markdown filer, og vóila!
 
-Det har klart været det nemmeste og mest effektive måde jeg har gjort ting længe, og jeg forventer at beholde denne måde at lave apps på i lang, lang tid.
+Derefter kan det bare smides direkte på [Netlify](https://netlify.app), som genbygger siden automatisk hver gang jeg opdaterer den.
 
-Jeg skulle selvfølgelig stadigvæk lave alting selv, men det har været en stor hjælp.
+Det har klart været det nemmeste og mest effektive måde jeg har gjort ting længe, og jeg forventer at beholde denne måde at lave static sider på i lang, lang tid.
+
+Jeg skulle selvfølgelig stadigvæk lave styling, layout og så videre selv, men det har været en stor hjælp.
 
 ## Kildeliste
 
-Siden er lavet med [11ty/eleventy](https://11ty.dev) og [Sass](https://sass-lang.com/).
+Siden er lavet med [11ty/eleventy](https://11ty.dev) og [Sass](https://sass-lang.com/), og er hosted med [Netlify](https://netlify.app).
 
 Siden's 1. version kan findes her: [1. version](https://react-v1-tphollebeek.netlify.app/)
 
 Siden's 2. version kan findes her: [2. version](https://v2-tphollebeek.netlify.app/)
+
+Denne side kan findes både på [tpho.dk](https://tpho.dk/) og [tphollebeek.dk](https://tphollebeek.dk/).
