@@ -30,9 +30,11 @@ Neocheckin består af 3 lag, skrevet i 3 forskellige sprog:
 * Cache: [Go](https://go.dev)
 * Frontend: [Dart/Flutter](https://flutter.dev)
 
-Det har en netværksgraf der ligner nogenlunde dette:
+Jeg har tegnet en netværksgraf der beskriver netværksopsætningen:
 
 ![en graf, der viser de 3 lag af neocheckin: wrapper, lokal cache, frontend, samt instrukdb](/images/neocheckin/setup-solo.png)
+
+Vi har selv skrevet wrapperen, lokal cache, og frontend, mens Instrukdb er det, som det gamle tjek-ind system er bygget på.
 
 De sprog, vi brugte, var baseret på de krav vi havde til neocheckin:
 
@@ -45,9 +47,9 @@ Mere specifikt havde vi disse tanker om sprogende:
 
 ### Wrapperens krav
 
-Wrapperen's originale mål var, at skulle ligge som et lag udenom instrukdb og hente alt det data vi havde brug for.
+Wrapperen's originale mål var, at skulle ligge som et lag udenom Instrukdb og hente alt det data vi havde brug for.
 
-Da der hverken var API til instrukdb, og vi ikke vidste om vi ville få tilladelse til det, valgte vi i stedet at læse fra de interne .php filer, brugt til intranettet, som viser ting som elevbilleder og flex.
+Da der hverken var API til Instrukdb, og vi ikke vidste om vi ville få tilladelse til det, valgte vi i stedet at læse fra de interne .php filer, brugt til intranettet, som viser ting som elevbilleder og flex.
 
 Vi brugte det derudover også som et eksempel, til hvilke data vi *kunne* få, og som et argument til hvorfor vi vil have en API skrevet.
 
@@ -75,10 +77,7 @@ Vi havde tankerne at det nok skulle køres på sin egen server, men det endte me
 
 Det gamle system var, kort sagt, rent spaghetti.
 
-Det, som mange ting ved praktikcenteret, er skrevet i PHP, og ligger på en PHP backend/database kaldet Instrukdb, som er fuld af lappeløsninger ovenpå lappeløsninger.
-
-
-Der var desuden mangel på sikkerhed, og det at skulle modificere systemet, er et rent mareridt.
+Det, som mange ting ved praktikcenteret, er skrevet i PHP, og som nævnt tidligere ligger på en PHP backend/database kaldet Instrukdb, som er fuld af lappeløsninger ovenpå lappeløsninger.
 
 For at give dig en idé af hvordan det var, her er hvordan de håndterer hvilke tidspunkter man må tjekke ind og ud:
 
@@ -105,7 +104,9 @@ function updateClock()
 
 Jeg har forkortet det markant; den fulde rå fil fra siden kan findes her: [Gamle tjek-ind frontend](/misc/neocheckin/old-frontend.js).
 
-Jeg ved ikke om de var allergisk til et `for` loop, men det var hvertifald sådan nogle slags problemer vi ville undgå, samt at bare gøre projektet meget mere skalerbart.
+Det er selvfølgelig bare noget frontend javascript; men det sætter ikke et specielt godt eksempel til, hvordan backend koden ser ud. Jeg er desuden også blevet fortalt af mine kollegaer, der skulle arbejde på at skrive den API, vi bruger, at koden bag Instrukdb er langt fra det bedste.
+
+Jeg ved ikke om de var allergisk til et for loop, men det var hvertifald sådan nogle slags problemer vi ville undgå, samt at bare gøre projektet meget mere skalerbart.
 
 Vi har derfor i stedet gjort det med en simpel JSON fil alá det her:
 
@@ -151,36 +152,30 @@ Det er en stor del af filosofien bag neocheckin:
 ### Bedre design
 
 Da det var PHP, brugte det også et WordPress tema oveni nogle andre notifikationer, der gjorde at det ikke var specielt intuitivt at bruge.
-Vi, og vores andre kollegaer der ikke er så vant til det gamle system, har f.eks. ofte oplevet, at vi tjekker ud forkert, fordi det WordPress tema kombineret med de knapper som der bruges, har så dårlig kontrast at man simpelthen glemmer at de er der, og at man desuden nogen gange kommer til at scanne sit kort to gange, så man bliver tjekket ind, og derefter tjekket ud igen direkte efter, og hvis man ikke ser det, registrerer systemet jo simpelthen ikke at man er tjekket ind.
+Vi, og vores andre kollegaer der ikke er så vant til det gamle system, har f.eks. ofte oplevet, at vi tjekker ud forkert, fordi det WordPress tema kombineret med de knapper som der bruges, har så dårlig kontrast at man simpelthen glemmer at de er der.
 
-## Beskrivelse
+Vi har også oplevet, at man kan komme til at scanne sit kort to gange, så man bliver tjekket ind, og derefter tjekket ud igen direkte efter, hvilket, hvis man ikke ser det, betyder at man bliver registreret som fraværende den dag af systemet.
 
-Et system for at tjekke ind og ud af arbejdet, til at kunne erstatte de tidligere systemer, med
-forskellige muligheder, f.eks. hvis man skulle tjekke ud tidligt til lægebesøg eller lignende.
-Mine kollega og jeg der var sat på opgaven mente at det nuværende system ikke var godt 
-nok, så vi valgte at også tillægge nogle forbedringer til det udover den gamle funktionalitet.
+### En mere direkte og skalerbar fremgangsmetode
 
-Vi opdaterer derudover også arkitekturen, da systemet skal bygges ovenpå en gammel
-PHP backend, som skal forbindes til over en VPN, der har en chance til at fejle, som vi
-naturligvis ikke har tilladelse til at ændre på, eftersom den har kontrol over medarbejder
-feriedage, flextid, osv.
+I det gamle system, bruger vi som EUXere Skive's tjek-ind system, da vi er under den samme ledelse som Skive, så selv om vi er placeret i Viborg, er vi "tættere" på at være Skive afdelingen, end vi er at være Viborg afdelingen.
 
-For at gøre det nemmere for os har min kollega derfor skrevet en wrapper server i
-TypeScript som skal kunne tage det data vi får fra PHP backenden, så vi ikke behøver at
-spørge hvis vi vil have en eller to småting ændret.
+Skive's system er en seperat version af Viborg's system, der sender en POST request til deres frontend, eftersom de bruger en HTML form, som man rimeligt ofte gør i PHP.
 
-Vi kalder det en ”wrapper” da den skal kunne ligges som et lag rundt om den nuværende
-PHP backend.
+Det har desuden også nogle seperate funktioner som at cache requests, hvis VPNen fejler, og nogle frontend features f.eks. hvem der er tjekket ind eller ej.
 
-Der har også været problemer hvor VPN forbindelsen dropper, hvorefter ledelsen skal taste
-hver elev’s tjek ind/ud tidspunkt ind manuelt.
-For at løse det har jeg skrevet et Cache lager, som skal kunne gemme elevdata som f.eks.
-navn og billeder, og formindske hvor mange gange vi skal få data over VPNen, da det har
-en chance for at fejle.
+Da både Skive's system og Viborg's system er interne, sender Skive selvfølgelig dets anmodninger gennem VPN.
 
-Til sidst har vi frontenden, som selvfølgelig også skulle opdateres. Den har jeg skrevet i
-Dart og Flutter, og designet efter input min kollega og jeg har samlet fra vores andre
-kollegaer om hvad der kunne gøres bedre omkring det tidligere system.
+Men eftersom vi ikke er i Skive, skal vi forbinde til skives system, gennem en VPN.
+
+Det skaber et system alá "nuværende system" på denne graf, kontra hvordan vi laver "vores system":
+
+(Afdeling 1 kan tænkes som "Skive", og Afdeling 2 som "EUX", jeg har bare forsøgt at gøre den abstrakt.)
 
 ![graf, der beskriver det gamle tjek-ind system's setup og vores](/images/neocheckin/setup-comparison.png)
 
+Det er ikke specielt skalerbart, at skulle bruge en VPN, for at forbinde til noget der også bruger en VPN, som har en chance for at fejle.
+
+Vi havde lyst til at undgå disse problemer, med at i stedet holde alting lokalt og seperat, ved brug af opdelte services; da i det gamle system, hvis f.eks. Skive's VPN var nede, ville det konsekvent betyde, at alle fremtidige afdelinger der måske forbindede til Skive, ville være nede.
+
+Med vores system, reducerer vi derfor punkterne hvor noget kan gå galt infrastrukturmessigt.
