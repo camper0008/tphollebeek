@@ -1,6 +1,6 @@
 ---
 title: tphollebeek
-description: Hjemmeside, hvor jeg skriver om mine projekter. Artikel under arbejde, ironisk nok.
+description: Hjemmeside, hvor jeg skriver om mine projekter.
 date: 2022-01-12
 tags: ["project", "frontend", "eleventy", "scss", "javascript"]
 layout: article.njk
@@ -14,7 +14,7 @@ Min hjemmeside har gået gennem 3 stadier nu, og jeg er kommet til en process so
 
 Den første var en html og css side (som jeg senere omdannede til at bruge React), hvor jeg skrev et par sætninger om migselv og mine projekter, med en lang liste af de sprog jeg havde haft kendskab eller erfaring med.
 
-![første side af version 1 af min side, med et meget åbenlyst blåt tema](/images/website-v1.png)
+![første side af version 1 af min side, med et meget åbenlyst blåt tema](/images/tphollebeek/v1.png)
 
 Der var især fokus på bl.a. Erfaring og Om Mig, da jeg ikke havde opbygget mange projekter endnu.
 
@@ -26,7 +26,7 @@ Der gik et par måneder, før jeg eventuelt valgte at jeg ville lave en ny side.
 
 Denne gang skulle det være et one-page layout, så kunne jeg jo lave én fil, og det eneste folk skulle gøre var at scrolle!
 
-![første side af version 2 af min side](/images/website-v2.png)
+![første side af version 2 af min side](/images/tphollebeek/v2.png)
 
 Det virkede okay; der var nogle mangel på projekter så igen kom der meget fokus på andre ting, men idetmindste havde jeg et par ting jeg kunne vise frem.
 
