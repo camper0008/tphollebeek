@@ -9,6 +9,7 @@ const filterOffsiteAnchors = (html) => html.replaceAll("<a href=\"http", "<a tar
 module.exports = function(eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false);
     
+    eleventyConfig.addPassthroughCopy({'src/misc': 'misc'});
     eleventyConfig.addPassthroughCopy({'src/images': 'images'});
     eleventyConfig.addPassthroughCopy({'src/fonts': 'fonts'});
     eleventyConfig.addPassthroughCopy({'src/favicon.ico': 'favicon.ico'});
