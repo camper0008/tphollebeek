@@ -1,0 +1,73 @@
+FROM ubuntu:20.04
+
+ENV BUILD_DIR="build"
+ENV FLUTTER_SOURCE_FILE="flutter_linux_2.5.3-stable.tar.xz"
+
+# checkout to the hash of flutter engine binaries for 2.5.3
+# you can get this by running
+# $ git clone https://github.com/ardera/flutter-engine-binaries-for-arm flutter-engine-bin
+# $ cd flutter-engine-bin
+# $ git log > logs.txt
+# and look in logs.txt for the version of flutter you're building for
+# -pieter
+ENV FLUTTER_ENGINE_BIN_HASH="5d9341a639ef510a767fe99a24619c222b9c849b"
+
+# install packages required
+RUN apt-get update
+RUN apt-get install bash wget tar xz-utils git --yes --quiet
+
+# making container/ for all container operations and container/$BUILD_DIR for building
+RUN mkdir container
+RUN mkdir container/$BUILD_DIR
+WORKDIR container/$BUILD_DIR
+COPY temp/flutter-app flutter_app
+RUN git clone https://github.com/ardera/flutter-engine-binaries-for-arm 
+RUN mv flutter-engine-binaries-for-arm flutter-engine-bin
+
+# Download and configure Flutter
+RUN wget "https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/$FLUTTER_SOURCE_FILE" --quiet
+RUN tar -xf $FLUTTER_SOURCE_FILE
+ENV FLUTTER_BIN="/container/$BUILD_DIR/flutter/bin"
+ENV FLUTTER="$FLUTTER_BIN/flutter"
+RUN $FLUTTER
+RUN $FLUTTER config --no-analytics
+
+# Configure flutter engine binaries
+WORKDIR flutter-engine-bin
+RUN git config advice.detachedHead false
+RUN git checkout $FLUTTER_ENGINE_BIN_HASH
+RUN bash ./install.sh
+
+# Build flutter app bundle
+WORKDIR ../flutter_app
+RUN $FLUTTER build bundle
+
+# Build kernel snapshot
+RUN $FLUTTER_BIN/cache/dart-sdk/bin/dart \
+	$FLUTTER_BIN/cache/dart-sdk/bin/snapshots/frontend_server.dart.snapshot \
+	--sdk-root $FLUTTER_BIN/cache/artifacts/engine/common/flutter_patched_sdk_product \
+	--target=flutter \
+	--aot \
+	--tfa \
+	-Ddart.vm.product=true \
+	--packages .packages \
+	--output-dill build/kernel_snapshot.dill \
+	--verbose \
+	--depfile build/kernel_snapshot.d \
+	package:neocheckin/main.dart
+
+# Build release executable
+RUN ../flutter-engine-bin/arm/gen_snapshot_linux_x64_profile \
+	--deterministic \
+	--snapshot_kind=app-aot-elf \
+	--elf=build/flutter_assets/app.so \
+	--strip \
+	--sim-use-hardfp \
+	build/kernel_snapshot.dill
+
+# Move finished build into container
+RUN mv build/flutter_assets ../..
+
+# Remove build directory
+WORKDIR ../..
+RUN rm -rf $BUILD_DIR

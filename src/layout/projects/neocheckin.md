@@ -71,6 +71,20 @@ Vi havde tankerne at det nok skulle køres på sin egen server, men det endte me
 
 ### Frontendens krav
 
+At vælge Flutter var ren tilfældighed; men det endte med at være et godt valg. Vi skulle gerne kunne køre den på en Raspberry Pi, hvilket er muligt vha. [flutter-pi](https://github.com/ardera/flutter-pi).
+
+Desværre krævede det mange forskellige ting at skulle bygge, og selv om vi var på Linux, som var klart det optimale, var det ikke altid nemt.
+
+Jeg har så derfor skrevet en Dockerfile til at bygge projektet i stedet, som trods at vi havde nogle problemer, har jeg fået den på en stabil tilstand.
+
+En Dockerfile er en liste af handlinger, der skabes på en virtuel maskine af en art.
+
+I vores tilfælde, er det en liste af handlinger, der klargører virtuelmaskinen til at bygge vores frontend, og til sidst bygger den og klargører alle de relevante dele, hvorefter vi eksporterer en kopi af filsystemet.
+
+Du kan finde den Dockerfile her: [Neocheckin Flutter App Dockerfile](/misc/neocheckin/Dockerfile-frontend.txt).
+
+Jeg har klart tænkt mig at bruge Dockerfiles i fremtiden, bare på grund af hvor meget nemmere de gør alting.
+
 ## Tankerne bag neocheckin
 
 ### Bedre end det gamle system
@@ -138,11 +152,12 @@ Vi har derfor i stedet gjort det med en simpel JSON fil alá det her:
                 "sunday": false
             }
         }
-    }
+    },
+    ...
 ]
 ```
 
-Vores data går ikke efter at skulle være nødvendigvist "effektivt" at læse eller skrive, men for at være markant *nemmere* at læse og skrive.
+Vores data går ikke efter at skulle være nødvendigvist "effektivt" at læse eller skrive, men for at være markant *nemmere* at læse og skrive; desuden at eftersom det er læst fra en fil, så længe de følger det samme format, kunne man i teorien have lige så mange man vil have, uden ekstra at skulle skrive ekstra kode.
 
 Det er en stor del af filosofien bag neocheckin:
 * Gør det nemt at ændre
