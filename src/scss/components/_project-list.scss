@@ -6,6 +6,7 @@
 
     .project-list-item {
         margin: 2rem 0;
+        border-radius: 0.5rem;
 
         .project-list-item__timestamp {
             font-size: 0.9rem;
@@ -39,5 +40,12 @@
                 }
             }
         }
+    }
+
+    .divider {
+        height: 1px;
+        width: 50%;
+        margin-bottom: 1.75rem;
+        background-color: var(--clr-bg-1);
     }
 }
