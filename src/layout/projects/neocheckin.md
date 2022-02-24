@@ -89,7 +89,7 @@ Jeg har klart tænkt mig at bruge Dockerfiles i fremtiden, bare på grund af hvo
 
 ### Bedre end det gamle system
 
-Det gamle system var, kort sagt, rent spaghetti.
+Det gamle system var, kort sagt, ikke specielt godt.
 
 Det, som mange ting ved praktikcenteret, er skrevet i PHP, og som nævnt tidligere ligger på en PHP backend/database kaldet Instrukdb, som er fuld af lappeløsninger ovenpå lappeløsninger.
 
@@ -120,7 +120,7 @@ Jeg har forkortet det markant; den fulde rå fil fra siden kan findes her: [Gaml
 
 Det er selvfølgelig bare noget frontend javascript; men det sætter ikke et specielt godt eksempel til, hvordan backend koden ser ud. Jeg er desuden også blevet fortalt af mine kollegaer, der skulle arbejde på at skrive den API, vi bruger, at koden bag Instrukdb er langt fra det bedste.
 
-Jeg ved ikke om de var allergisk til et for loop, men det var hvertifald sådan nogle slags problemer vi ville undgå, samt at bare gøre projektet meget mere skalerbart.
+Det var hvertifald sådan nogle slags problemer vi ville undgå, samt at bare gøre projektet meget mere skalerbart, da det ville være træls hvis man i længden skulle tillægge flere muligheder for at scanne kort ind og ud.
 
 Vi har derfor i stedet gjort det med en simpel JSON fil alá det her:
 
