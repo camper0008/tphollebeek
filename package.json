@@ -7,9 +7,9 @@
   "scripts": {
     "watch:sass": "sass --watch --update --style=expanded src/scss:public/css",
     "build:sass": "sass --no-source-map --style=compressed src/scss:public/css",
-    "watch:eleventy": "eleventy --serve",
-    "build:eleventy": "eleventy",
-    "build": "yarn build:sass && yarn build:eleventy"
+    "watch:11ty": "eleventy --serve",
+    "build:11ty": "eleventy",
+    "build": "yarn build:sass && yarn build:11ty"
   },
   "name": "tphollebeek",
   "version": "1.0.0",
