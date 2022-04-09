@@ -4,6 +4,7 @@
   "start_url": ".",
   "display": "standalone",
   "background_color": "#8fbcbb",
+  "theme_color": "#8fbcbb",
   "description": "Theis Pieter Hollebeek er en 17 år gammel student og programmør der søger praktikplads.",
   "icons": [{
     "src": "images/pwa/icon-48.png",
