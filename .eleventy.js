@@ -13,6 +13,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy({'src/images': 'images'});
     eleventyConfig.addPassthroughCopy({'src/fonts': 'fonts'});
     eleventyConfig.addPassthroughCopy({'src/favicon.ico': 'favicon.ico'});
+    eleventyConfig.addPassthroughCopy({'src/manifest.json': 'manifest.json'});
     
     eleventyConfig.addNunjucksFilter("formattedDate", formatDate );
     eleventyConfig.addNunjucksFilter("lower", (value) => value.toLowerCase() );
