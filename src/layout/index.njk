@@ -10,7 +10,7 @@ layout: 'base.njk'
             <div id="me"><img src="/images/me.png" width="175" height="311.267"
                     alt="billede af Theis Pieter, som smiler">
             </div>
-            <p>Mit navn er Theis Pieter Hollebeek, jeg er en 18 år gammel studerende og programmør.</p>
+            <p>Mit navn er Theis Pieter Hollebeek, jeg er en <span id="age">{{ _ | age }}</span> år gammel studerende og programmør.</p>
             <p>Jeg har haft interesse for teknologi siden jeg var meget lille, og har programmeret siden jeg var 13
                 år
                 gammel.</p>
@@ -41,4 +41,5 @@ layout: 'base.njk'
             <p>Denne side kan findes på <a href="https://tpho.dk">tpho.dk</a> og <a href="https://tphollebeek.dk">tphollebeek.dk</a>.
         </div>
     </section>
+    <script src="/js/age.js"></script>
 </main>
