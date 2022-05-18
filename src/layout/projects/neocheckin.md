@@ -4,7 +4,7 @@ description: Tjek-ind system der erstatter PraktikCenter Viborg's gamle tjek-ind
 date: 2022-01-17
 tags: ["project", "frontend", "backend", "flutter", "go", "docker"]
 layout: article.njk
---- 
+---
 
 ## Begyndelsen af neocheckin
 
@@ -26,9 +26,9 @@ Vi valgte at kalde den neocheckin, som egentligt bare er en flot måde at sige "
 
 Neocheckin består af 3 lag, skrevet i 3 forskellige sprog:
 
-* Wrapper: [TypeScript](https://www.typescriptlang.org/)
-* Cache: [Go](https://go.dev)
-* Frontend: [Dart/Flutter](https://flutter.dev)
+-   Wrapper: [TypeScript](https://www.typescriptlang.org/)
+-   Cache: [Go](https://go.dev)
+-   Frontend: [Dart/Flutter](https://flutter.dev)
 
 Jeg har tegnet en netværksgraf der beskriver netværksopsætningen:
 
@@ -38,10 +38,10 @@ Vi har selv skrevet wrapperen, lokal cache, og frontend, mens Instrukdb er det, 
 
 De sprog, vi brugte, var baseret på de krav vi havde til neocheckin:
 
-* Simpelt at bruge og lære
-* Skalerbart
-* Opfylder systemkravende
-* Gør det, som vi har brug for at gøre
+-   Simpelt at bruge og lære
+-   Skalerbart
+-   Opfylder systemkravende
+-   Gør det, som vi har brug for at gøre
 
 Mere specifikt havde vi disse tanker om sprogende:
 
@@ -51,7 +51,7 @@ Wrapperen's originale mål var, at skulle ligge som et lag udenom Instrukdb og h
 
 Da der hverken var API til Instrukdb, og vi ikke vidste om vi ville få tilladelse til det, valgte vi i stedet at læse fra de interne .php filer, brugt til intranettet, som viser ting som elevbilleder og flex.
 
-Vi brugte det derudover også som et eksempel, til hvilke data vi *kunne* få, og som et argument til hvorfor vi vil have en API skrevet.
+Vi brugte det derudover også som et eksempel, til hvilke data vi _kunne_ få, og som et argument til hvorfor vi vil have en API skrevet.
 
 Eftersom vi skulle læse gennem en masse .php filer, skulle vi have et sprog vi nemt kunne arbejde med, som nemt kunne læse ting i et HTML format, hvor TypeScript selvfølgelig var et perfekt match.
 
@@ -96,22 +96,43 @@ Det, som mange ting ved praktikcenteret, er skrevet i PHP, og som nævnt tidlige
 For at give dig en idé af hvordan det var, her er hvordan de håndterer hvilke tidspunkter man må tjekke ind og ud:
 
 ```javascript
-function updateClock()
-{
-    var dayStart = "09:00:00"; //tjek ind (Mandag, Tirsdag, Onsdag, Torsdag)
-    var dayEnd = "15:00:00"; //tjek ud (Mandag, Tirsdag, Onsdag, Torsdag)
-    var dayEndFriday = "11:30:00"; //tjek ud (fredag)
+function updateClock() {
+    var dayStart = "09:00:00" //tjek ind (Mandag, Tirsdag, Onsdag, Torsdag)
+    var dayEnd = "15:00:00" //tjek ud (Mandag, Tirsdag, Onsdag, Torsdag)
+    var dayEndFriday = "11:30:00" //tjek ud (fredag)
     // ... omkring 16 flere linjer af det her
 
-    var currentTime = new Date ();
+    var currentTime = new Date()
 
-    var weekDay = currentTime.getDay();
-    var currentHours = currentTime.getHours ();
-    var currentMinutes = currentTime.getMinutes ();
-    var currentSeconds = currentTime.getSeconds ();
+    var weekDay = currentTime.getDay()
+    var currentHours = currentTime.getHours()
+    var currentMinutes = currentTime.getMinutes()
+    var currentSeconds = currentTime.getSeconds()
 
-    var currentTimeStamp = new Date((currentTime.getMonth() + 1) + "/" + currentTime.getDate() + "/" + currentTime.getFullYear() + " " + curentHours + ":" + currentMinutes + ":" + currentSeconds);
-    var normalStartTimeStamp = new Date((currentTime.getMonth() + 1) + "/" + currentTime.getDate() + "/" + currentTime.getFullYear() + " " + dayStart);
+    var currentTimeStamp = new Date(
+        currentTime.getMonth() +
+            1 +
+            "/" +
+            currentTime.getDate() +
+            "/" +
+            currentTime.getFullYear() +
+            " " +
+            curentHours +
+            ":" +
+            currentMinutes +
+            ":" +
+            currentSeconds
+    )
+    var normalStartTimeStamp = new Date(
+        currentTime.getMonth() +
+            1 +
+            "/" +
+            currentTime.getDate() +
+            "/" +
+            currentTime.getFullYear() +
+            " " +
+            dayStart
+    )
     // ... gentaget med forskellige tidspunkter omkring 18 gange
 }
 ```
@@ -132,15 +153,15 @@ Vi har derfor i stedet gjort det med en simpel JSON fil alá det her:
         "category": "check in",
         "priority": true,
         "schedule": {
-            "from": { 
-                "hour": 7, 
-                "minute": 0, 
-                "second": 0 
+            "from": {
+                "hour": 7,
+                "minute": 0,
+                "second": 0
             },
-            "to": { 
-                "hour": 9, 
-                "minute": 0, 
-                "second": 0 
+            "to": {
+                "hour": 9,
+                "minute": 0,
+                "second": 0
             },
             "days": {
                 "monday": true,
@@ -157,12 +178,13 @@ Vi har derfor i stedet gjort det med en simpel JSON fil alá det her:
 ]
 ```
 
-Vores data går ikke efter at skulle være nødvendigvist "effektivt" at læse eller skrive, men for at være markant *nemmere* at læse og skrive; desuden at eftersom det er læst fra en fil, så længe de følger det samme format, kunne man i teorien have lige så mange man vil have, uden ekstra at skulle skrive ekstra kode.
+Vores data går ikke efter at skulle være nødvendigvist "effektivt" at læse eller skrive, men for at være markant _nemmere_ at læse og skrive; desuden at eftersom det er læst fra en fil, så længe de følger det samme format, kunne man i teorien have lige så mange man vil have, uden ekstra at skulle skrive ekstra kode.
 
 Det er en stor del af filosofien bag neocheckin:
-* Gør det nemt at ændre
-* Gør det nemt at bruge
-* Gør det bedre end det gamle system, og prøv at undgå de samme problemer de er kommet ind i.
+
+-   Gør det nemt at ændre
+-   Gør det nemt at bruge
+-   Gør det bedre end det gamle system, og prøv at undgå de samme problemer de er kommet ind i.
 
 ### Bedre design
 

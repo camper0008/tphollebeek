@@ -4,18 +4,18 @@ I chose to redesign my website in order to have more clarity and prevent having 
 
 ## To-do list:
 
-- [x] Contact information
+-   [x] Contact information
 
-- [x] Write 1-3 articles to get started
+-   [x] Write 1-3 articles to get started
 
-- [x] Project overview
+-   [x] Project overview
 
-- [x] Convert page to work with [11ty](https://www.11ty.dev/) to use in project overview
+-   [x] Convert page to work with [11ty](https://www.11ty.dev/) to use in project overview
 
-- [x] Fancy background
+-   [x] Fancy background
 
-- [x] Image of me somewhere
+-   [x] Image of me somewhere
 
-- [ ] Technologies I have experience with
+-   [ ] Technologies I have experience with
 
-- [ ] Quick navigation
+-   [ ] Quick navigation

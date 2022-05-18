@@ -33,6 +33,7 @@ Det virkede okay; der var nogle mangel på projekter så igen kom der meget foku
 Langt de fleste var dog frontendprojekter, og selv om jeg havde erfaring med backend var det ikke altid mig der arbejdede på de projekter.
 
 Der var dog to rimelig store problemer:
+
 1. Det var simpelthen ikke var nemt nok at skrive om nye projekter, på grund af den måde jeg havde sat alting op, og at jeg ville have et alternativ til folk der ikke brugte javascript, betød at skulle skrive alting i den éne html fil var et mareridt.
 2. At skulle kigge på projekterne var ikke specielt effektivt. Da jeg kun brugte billeder af mine projekter, havde jeg et stort problem i, at det simpelthen ikke var klart at vide om et projekt var interessant eller ej.
 

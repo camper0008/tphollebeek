@@ -23,11 +23,12 @@ Så kom jeg i gang med at lære at bruge Nginx og skrive en Nginx config fil.
 Det tog lidt tid at skulle bakse med, men efter en dag eller to var jeg færdig.
 
 pap.vin kan derfor nu:
-* Håndtere statiske filer til både [pap.vin](https://pap.vin) og [pap.vin/flex](https://pap.vin).
 
-* Sende API anmodninger fra `/flex/api` videre til dets serverprocess.
+-   Håndtere statiske filer til både [pap.vin](https://pap.vin) og [pap.vin/flex](https://pap.vin).
 
-* Omdirigere fra `/site`  til denne side, samt fra `/arch/<script-navn>` til nogle scripts jeg har skrevet til min arch-installation, hosted på [GitHub](https://github.com/camper0008/arch).
+-   Sende API anmodninger fra `/flex/api` videre til dets serverprocess.
+
+-   Omdirigere fra `/site` til denne side, samt fra `/arch/<script-navn>` til nogle scripts jeg har skrevet til min arch-installation, hosted på [GitHub](https://github.com/camper0008/arch).
 
 ## Kildeliste
 

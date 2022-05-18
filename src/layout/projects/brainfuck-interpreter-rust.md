@@ -24,7 +24,7 @@ Eksempelvis, her et et simpelt program jeg har skrevet der finder summen af numr
 
 ## Førstehåndsindtrykket af Rust
 
-Da jeg hørte om Rust, var jeg meget nysgerrig om konceptet, men havde ikke fået en chance til at afprøve det; jeg var desuden også tøvende, da sproget lignede at det havde et stort "new language syndrome", hvor de skulle omskrive *alt* syntaks, da de for alt i verden skulle undgå at være "endnu en (indsæt sprog her) klon", og det fra et C og TypeScript perspektiv lignede noget rent hokus pokus.
+Da jeg hørte om Rust, var jeg meget nysgerrig om konceptet, men havde ikke fået en chance til at afprøve det; jeg var desuden også tøvende, da sproget lignede at det havde et stort "new language syndrome", hvor de skulle omskrive _alt_ syntaks, da de for alt i verden skulle undgå at være "endnu en (indsæt sprog her) klon", og det fra et C og TypeScript perspektiv lignede noget rent hokus pokus.
 
 Dog, op til juleferien hvor alle dem der ikke på fysisk ferie, hvertifald er mentalt, sad jeg og havde mangel af ting at lave; vi var blevet færdig med det meste af [neocheckin](/projects/neocheckin) for et par uger siden, og siden da havde vi arbejdet på personlige projekter mens vi ventede på det nye skridt.
 
@@ -42,7 +42,7 @@ Nu hvor jeg havde lært mere om Rust, tænkte jeg som en sand [Rustacean](https:
 
 Jeg startede den 21. december, og blev færdig med den første version knapt en dag senere.
 
-Der viste sig dog at være et problem: Den var forfærdeligt, *forfærdeligt* langsom.
+Der viste sig dog at være et problem: Den var forfærdeligt, _forfærdeligt_ langsom.
 
 Det betød ikke meget med simple programmer som f.eks. Hello World, men da mit program tog ca. 2 ½ minut om at køre en benchmark som tog min kollega få sekunder at køre, vidste jeg der var noget galt.
 
@@ -61,6 +61,7 @@ pub struct BracketPair {
    pub end: u32,
 }
 ```
+
 Det mest indlysende var, at jeg copierede og clonede en BracketPair, hver gang jeg skulle finde et par med matchende værdier.
 
 ```rust
@@ -103,7 +104,7 @@ Jeg omskrev derfor min brainfuck interpreter til at bruge nogle "instruction" to
 
 ```rust
 pub enum TokenType {
-    Increment, 
+    Increment,
     Decrement,
     IncrementPointer,
     DecrementPointer,
@@ -119,16 +120,19 @@ pub struct Token {
 
 Dette gjorde en meget stor forskel; nu behøvede jeg ikke længere at skulle gå igennem alle par af brackets før jeg kunne finde den rigtige, hvis den havde en matchende type, kunne jeg bare bare se hvad min nuværende token's værdi var!
 
-Efter det, for at optimisere *endnu* mere, lavede jeg småting som hvis det er flere af de samme tokens sammen, ville jeg sætte dem sammen, så hvad der før ville være
+Efter det, for at optimisere _endnu_ mere, lavede jeg småting som hvis det er flere af de samme tokens sammen, ville jeg sætte dem sammen, så hvad der før ville være
+
 ```rust
-[ 
-    Token(Increment, 1), Token(Increment, 1), 
-    Token(Increment, 1), Token(Increment, 1), 
-    Token(Increment, 1), Token(Increment, 1), 
+[
+    Token(Increment, 1), Token(Increment, 1),
+    Token(Increment, 1), Token(Increment, 1),
+    Token(Increment, 1), Token(Increment, 1),
     Token(Increment, 1), Token(Increment, 1)
 ]
 ```
+
 blev til
+
 ```rust
 [ Token(Increment, 8) ]
 ```
@@ -147,10 +151,10 @@ Udover det, lærte jeg også meget om Rust og dets funktionalitet ved at lave de
 
 Koden for alle disse projekter nævnt kan findes på min GitHub:
 
-- [Brainfuck Interpreter - Rust](https://github.com/camper0008/brainfuck-interpreter-rust).
+-   [Brainfuck Interpreter - Rust](https://github.com/camper0008/brainfuck-interpreter-rust).
 
-- [Brainfuck Interpreter - C](https://github.com/camper0008/brainfuck-interpreter-c).
+-   [Brainfuck Interpreter - C](https://github.com/camper0008/brainfuck-interpreter-c).
 
-- [Rust Inverted Binary Tree](https://github.com/camper0008/inverted-binary-tree-rust).
+-   [Rust Inverted Binary Tree](https://github.com/camper0008/inverted-binary-tree-rust).
 
 Mere information om Brainfuck er bedre forklaret af [dets Wikipedia-artikel](https://en.wikipedia.org/wiki/Brainfuck), bemærk at den er engelsk.

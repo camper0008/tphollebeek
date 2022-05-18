@@ -1,20 +1,27 @@
-@import 'global';
-@import 'nord-highlight';
-@import 'components/font';
-@import 'components/header';
-@import 'components/project-list';
-@import 'components/article';
-@import 'components/me';
-@import 'components/age';
-@import 'media';
+@import "global";
+@import "nord-highlight";
+@import "components/font";
+@import "components/header";
+@import "components/project-list";
+@import "components/article";
+@import "components/me";
+@import "components/age";
+@import "media";
 
 body {
     margin: 0;
-    background:
-        url("/images/top-left.svg") top left no-repeat,
+    background: url("/images/top-left.svg") top left no-repeat,
         url("/images/bottom-right.svg") bottom right no-repeat,
-        radial-gradient(circle farthest-side at 0% 0%, var(--clr-bg-1) -50%, transparent 30%),
-        radial-gradient(circle farthest-side at 100% 100%, var(--clr-bg-1) -50%, transparent 30%),
+        radial-gradient(
+            circle farthest-side at 0% 0%,
+            var(--clr-bg-1) -50%,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle farthest-side at 100% 100%,
+            var(--clr-bg-1) -50%,
+            transparent 30%
+        ),
         var(--clr-bg-0);
     background-color: var(--clr-bg-0);
     color: var(--clr-text);
@@ -25,7 +32,8 @@ body {
     padding-bottom: 3.5rem;
 }
 
-h1, h2 {
+h1,
+h2 {
     color: var(--clr-brand);
     font-style: italic;
 }
@@ -34,7 +42,8 @@ a {
     color: var(--clr-brand);
 }
 
-pre, code {
+pre,
+code {
     font-size: 1rem;
     font-weight: 500;
     font-family: "Red Hat Mono", monospace;
@@ -51,7 +60,6 @@ pre {
     border-radius: 0.5rem;
     overflow-x: auto;
 }
-
 
 img {
     max-width: 100%;
